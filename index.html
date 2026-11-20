@@ -3,348 +3,294 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#07080a">
-  <title>Cavernícolas BarberShop | Experiencias Diseñadas para Hombres Fieles</title>
-  <meta name="description" content="Cavernícolas BarberShop en Cancún. La máxima experiencia de barbería tradicional de lujo, cortes de autor, afeitado a navaja, toalla caliente y cuidado facial.">
+  <meta name="theme-color" content="#0a0b0e">
+  <title>Cabernicolas Barbershop | Atelier de Cuidado Masculino • Cancún</title>
+  <meta name="description" content="Cabernicolas Barbershop en Cancún. Experiencias diseñadas para hombres fieles. Cortes de autor, ritual tradicional a navaja libre, toallas calientes y cuidado facial integral.">
 
   <!-- Favicon SVG -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <!-- Google Fonts: Cinzel + Outfit + Space Grotesk -->
+  <!-- Google Fonts: Cinzel + Plus Jakarta Sans + Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN as utility booster -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            gold: {
-              300: '#FBF5B7',
-              400: '#D4AF37',
-              500: '#BF953F',
-              600: '#AA771C'
-            },
-            carbon: {
-              950: '#07080a',
-              900: '#0c0d12',
-              800: '#14161f',
-              700: '#1c1f2b'
-            }
-          },
-          fontFamily: {
-            cinzel: ['Cinzel', 'serif'],
-            outfit: ['Outfit', 'sans-serif'],
-            mono: ['Space Grotesk', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Complete Self-Contained Stylesheet -->
+  <!-- Bespoke Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- 1. Top Announcement Bar -->
-  <div class="top-bar">
-    <div class="container flex items-center justify-between">
-      <div class="flex items-center gap-2">
+  <!-- Top Announcement Bar -->
+  <aside class="top-announcement" aria-label="Estado del negocio">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
         <span id="shop-pulse-indicator" class="pulse-dot"></span>
-        <span id="shop-live-status" class="font-medium">Comprobando horario de atención en Cancún...</span>
+        <span id="shop-live-status" style="font-weight: 500;">Comprobando horario de atención en Cancún...</span>
       </div>
-      <div class="hidden sm:flex items-center gap-4 text-gray-400">
-        <span>📍 Calle Prol. Av. Kabáh 1, Paseos Kabah, Cancún</span>
-        <a href="tel:+529983374945" class="hover:text-gold-400 transition-colors">📞 998 337 4945</a>
+      <div style="display: flex; align-items: center; gap: 1.5rem; color: var(--text-muted);" class="hidden sm:flex">
+        <span>Paseos Kabah, Cancún, Q.R.</span>
+        <a href="tel:+529983374945" style="color: var(--text-secondary); transition: color 0.2s;">📞 998 337 4945</a>
       </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- 2. Header / Fixed Navigation Bar -->
-  <header id="main-header" class="main-nav-header">
-    <div class="container navbar-container">
+  <!-- Navigation Header -->
+  <header id="main-header" class="site-header">
+    <div class="container header-container">
       
-      <!-- Logo & Brand Badge -->
-      <a href="#hero" class="brand-badge" aria-label="Cavernícolas BarberShop">
-        <div class="brand-logo-shield">
-          <svg class="w-6 h-6 text-gold-400" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 4L33 10V21C33 28.5 27.5 35.5 20 38C12.5 35.5 7 28.5 7 21V10L20 4Z" stroke="url(#goldGradientIcon)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M15 17L20 22L25 17M20 22V29" stroke="url(#goldGradientIcon)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14 13H26" stroke="url(#goldGradientIcon)" stroke-width="1.8" stroke-linecap="round"/>
-            <defs>
-              <linearGradient id="goldGradientIcon" x1="7" y1="4" x2="33" y2="38" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#BF953F"/>
-                <stop offset="0.3" stop-color="#FCF6BA"/>
-                <stop offset="0.7" stop-color="#B38728"/>
-                <stop offset="1" stop-color="#AA771C"/>
-              </linearGradient>
-            </defs>
+      <!-- Brand Anchor -->
+      <a href="#hero" class="brand-anchor" aria-label="Cabernicolas Barbershop - Inicio">
+        <div class="brand-monogram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z"></path>
+            <path d="M12 6V18"></path>
+            <path d="M8 10L16 14"></path>
+            <path d="M8 14L16 10"></path>
           </svg>
         </div>
         <div>
-          <span class="brand-text-main text-gold-gradient">Cavernícolas</span>
-          <span class="brand-text-sub">BarberShop</span>
+          <span class="brand-name">Cabernicolas</span>
+          <span class="brand-subline">Barbershop • Cancún</span>
         </div>
       </a>
 
-      <!-- Desktop Nav Menu -->
-      <nav class="nav-menu-desktop">
-        <a href="#experiencias" class="nav-item">Experiencias</a>
-        <a href="#servicios" class="nav-item">Servicios</a>
-        <a href="#reservar" class="nav-item">Reservar Cita</a>
-        <a href="#ubicacion" class="nav-item">Horarios y Ubicación</a>
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#experiencias" class="nav-link">Experiencias</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#reservar" class="nav-link">Reservar Cita</a>
+        <a href="#ubicacion" class="nav-link">Horarios y Ubicación</a>
       </nav>
 
-      <!-- Navbar Actions -->
-      <div class="navbar-actions">
-        <!-- Mis Citas Trigger -->
-        <button id="btn-open-my-appointments" class="btn-my-appointments" type="button" aria-label="Ver mis citas">
-          <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path></svg>
+      <!-- Action Group -->
+      <div class="header-action-group">
+        <button id="btn-open-my-appointments" class="btn-ghost-nav" type="button" aria-label="Ver mis citas guardadas">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           <span>Mis Citas</span>
-          <span id="badge-my-appointments" class="badge-counter hidden">0</span>
+          <span id="badge-my-appointments" class="badge-count hidden">0</span>
         </button>
 
-        <!-- CTA Agendar Cita -->
-        <a href="#reservar" class="btn-nav-book">
+        <a href="#reservar" class="btn-primary-nav">
           Agendar Cita
         </a>
 
-        <!-- Hamburger Button Mobile -->
-        <button id="mobile-menu-btn" class="hamburger-btn" type="button" aria-label="Abrir menú">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        <button id="mobile-menu-btn" class="mobile-menu-trigger" type="button" aria-label="Abrir menú de navegación">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
       </div>
 
     </div>
 
-    <!-- Mobile Drawer Navigation -->
-    <div id="mobile-drawer" class="mobile-nav-drawer">
-      <a href="#experiencias" class="mobile-item">★ Experiencias Cavernícolas</a>
-      <a href="#servicios" class="mobile-item">✂ Servicios de Especialidad</a>
-      <a href="#reservar" class="mobile-item">📅 Reservar Cita Online</a>
-      <a href="#ubicacion" class="mobile-item">📍 Horarios y Ubicación</a>
-      <div class="pt-4 mt-2 flex flex-col gap-3">
-        <button id="btn-open-my-appointments-mobile" type="button" class="btn-card-select outline w-full text-xs py-2.5">
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer-pane">
+      <a href="#experiencias" class="mobile-nav-link">Experiencias Cabernicolas</a>
+      <a href="#servicios" class="mobile-nav-link">Servicios de Especialidad</a>
+      <a href="#reservar" class="mobile-nav-link">Reservar Cita Online</a>
+      <a href="#ubicacion" class="mobile-nav-link">Horarios y Ubicación</a>
+      <div style="padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+        <button id="btn-open-my-appointments-mobile" type="button" class="btn-cta-secondary" style="width: 100%; justify-content: center; font-size: 0.82rem; padding: 0.75rem;">
           Ver Mis Citas Guardadas
         </button>
-        <a href="#reservar" class="btn-card-select primary w-full text-center text-xs py-3">
-          Agendar Mi Experiencia
+        <a href="#reservar" class="btn-cta-primary" style="width: 100%; justify-content: center; font-size: 0.82rem; padding: 0.85rem;">
+          Agendar Experiencia
         </a>
       </div>
     </div>
   </header>
 
-  <!-- 3. Identidad y Sección Hero (Portada) -->
-  <section id="hero" class="hero-wrapper">
-    <div class="hero-bg-overlay"></div>
-    
-    <div class="container hero-content">
+  <!-- Hero Section -->
+  <section id="hero" class="hero-editorial">
+    <div class="container">
       
-      <!-- Top Badge -->
-      <div class="hero-badge-pill">
-        <span class="text-gold-400 text-sm">✦</span>
-        <span class="text-xs uppercase tracking-widest text-gold-300 font-bold">Barbería Clásica & De Autor en Cancún</span>
-        <span class="text-gold-400 text-sm">✦</span>
+      <div class="hero-grid">
+        <!-- Brand Manifesto -->
+        <div>
+          <span class="hero-tagline">Atelier de Cuidado Masculino • Cancún</span>
+          <h1 class="hero-headline">
+            Experiencias diseñadas para hombres fieles.
+          </h1>
+          <p class="hero-statement">
+            Un espacio donde el ritual clásico de barbería recupera su pausa y rigor. Cortes con diagnóstico de imagen, navaja libre con toalla caliente y tratamientos de cuidado facial de autor.
+          </p>
+
+          <div class="hero-cta-bar">
+            <a href="#reservar" class="btn-cta-primary">
+              <span>Agendar mi experiencia</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#experiencias" class="btn-cta-secondary">
+              Consultar Experiencias
+            </a>
+          </div>
+        </div>
+
+        <!-- Authentic Photography Frame -->
+        <div>
+          <div class="hero-visual-frame">
+            <img 
+              src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80" 
+              alt="Ritual de afeitado clásico con toalla caliente y navaja libre en Cabernicolas Barbershop Cancún"
+              loading="eager"
+            >
+            <div class="hero-visual-caption">
+              <div>
+                <span style="font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-bronze); font-weight: 700; display: block;">Atención Personalizada</span>
+                <span style="font-size: 0.88rem; font-weight: 600; color: #ffffff;">Calle Prol. Av. Kabáh 1, Cancún</span>
+              </div>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); font-family: var(--font-mono);">1 a 1 • Sin prisas</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Main Heading -->
-      <h1 class="hero-title">
-        Cavernícolas<br>
-        <span class="text-gold-gradient">BarberShop</span>
-      </h1>
-
-      <!-- Slogan -->
-      <p class="hero-slogan">
-        "Experiencias diseñadas para <span class="text-white font-medium not-italic border-b border-gold-400/50 pb-0.5">hombres fieles</span>"
-      </p>
-
-      <!-- Highlights / Amenidades Grid -->
-      <div class="hero-features-bar">
-        <div class="feature-pill">
-          <span class="text-lg block mb-0.5">💈</span>
-          <strong class="text-xs text-white block">Navaja Libre</strong>
-          <span class="text-[10px] text-gray-400">Toalla y vapor caliente</span>
+      <!-- Horizontal Values Strip (Replacing AI Mini-Cards) -->
+      <div class="values-strip" style="margin-top: 3.5rem;">
+        <div class="value-item">
+          <h4>Vapor & Navaja Libre</h4>
+          <p>Apertura de poro y afeitado tradicional al milímetro.</p>
         </div>
-        <div class="feature-pill">
-          <span class="text-lg block mb-0.5">🥃</span>
-          <strong class="text-xs text-white block">Cortesía Premium</strong>
-          <span class="text-[10px] text-gray-400">Trago de cortesía</span>
+        <div class="value-item">
+          <h4>Cortesía de Bienvenida</h4>
+          <p>Disfruta de una bebida de cortesía durante tu estancia.</p>
         </div>
-        <div class="feature-pill">
-          <span class="text-lg block mb-0.5">✂</span>
-          <strong class="text-xs text-white block">Barberos Máster</strong>
-          <span class="text-[10px] text-gray-400">Corte & perfilado exacto</span>
+        <div class="value-item">
+          <h4>Barberos Especialistas</h4>
+          <p>Maestría en tijera, visagismo y perfilado de barba.</p>
         </div>
-        <div class="feature-pill">
-          <span class="text-lg block mb-0.5">⚡</span>
-          <strong class="text-xs text-white block">Ticket & WhatsApp</strong>
-          <span class="text-[10px] text-gray-400">Confirmación inmediata</span>
+        <div class="value-item">
+          <h4>Confirmación Inmediata</h4>
+          <p>Comprobante con folio digital y enlace directo a WhatsApp.</p>
         </div>
-      </div>
-
-      <!-- Hero Call To Action Group -->
-      <div class="hero-cta-group">
-        <a href="#reservar" class="btn-hero-primary">
-          <span>Agendar mi experiencia</span>
-          <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </a>
-        <a href="#experiencias" class="btn-hero-secondary">
-          <span>Ver Menú de Experiencias</span>
-        </a>
-      </div>
-
-      <!-- Trust signals -->
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400">
-        <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> 4.9/5 en satisfacción</span>
-        <span class="text-white/20">•</span>
-        <span>Puntualidad rigurosa</span>
-        <span class="text-white/20">•</span>
-        <span>Atención 1 a 1 de primera</span>
       </div>
 
     </div>
   </section>
 
-  <!-- 4. Catálogo de Servicios: Categoría A - Experiencias Cavernícolas -->
-  <section id="experiencias" class="section-padding bg-carbon-900 border-t border-gold-500/20">
+  <!-- Sección: Experiencias Cabernicolas (Categoría A) -->
+  <section id="experiencias" class="section-wrapper">
     <div class="container">
       
-      <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="section-tag">Categoría A</span>
-        <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-wider mb-3">
-          ★ Experiencias <span class="text-gold-gradient">Cavernícolas</span>
-        </h2>
-        <div class="gold-line mb-4"></div>
-        <p class="text-gray-400 text-sm sm:text-base font-light">
-          Paquetes recomendados por la casa. Diseñados como rituales completos para el hombre distinguido que no compromete su imagen.
+      <div class="editorial-header">
+        <span class="editorial-tag">Menú de Autor</span>
+        <h2 class="editorial-title">Experiencias Cabernicolas</h2>
+        <p class="editorial-subtitle">
+          Rituales integrales estructurados para transformar tu imagen. Selecciona tu experiencia preferida para preseleccionarla directamente en el módulo de reservas.
         </p>
       </div>
 
-      <!-- Experience Cards Grid (3 Columns) -->
-      <div class="cards-grid-3">
+      <div class="experiences-grid">
         
-        <!-- Experiencia 1: Cavernícolas Black Label (El más elegido) -->
-        <div class="experience-card featured">
-          <div class="gold-badge-top">
-            ★ EL MÁS ELEGIDO ★
-          </div>
+        <!-- Experiencia 1: Black Label (Flagship) -->
+        <div class="experience-item flagship">
+          <span class="flagship-label">El Más Elegido</span>
 
           <div>
-            <div class="mt-2 mb-2">
-              <span class="text-[11px] font-bold text-gold-400 uppercase tracking-widest block mb-1">Ritual Completo de Autor</span>
-              <h3 class="font-cinzel text-2xl font-bold text-white">Cavernícolas Black Label</h3>
+            <span class="exp-tier">Ritual Completo de Autor</span>
+            <h3 class="exp-title">Black Label</h3>
+            
+            <div class="exp-price-row">
+              <span class="exp-price-amount">$430</span>
+              <span class="exp-price-currency">MXN</span>
             </div>
 
-            <div class="price-display">
-              <span class="price-number text-gold-gradient">$430</span>
-              <span class="price-currency">MXN</span>
-            </div>
-
-            <p class="text-xs text-gray-400 italic border-l-2 border-gold-400 pl-3 my-4">
-              La experiencia insignia y definitiva: cabello, barba, ceja milimétrica y piel profundamente renovada.
+            <p class="exp-summary">
+              La máxima expresión de nuestro atelier: corte personalizado, barba afeitada al milímetro con toalla caliente, perfilado de ceja y limpieza facial profunda purificante.
             </p>
 
-            <ul class="included-list">
-              <li class="included-item">
-                <span class="check">✓</span>
-                <span><strong>Corte premium</strong> con diseño y diagnóstico</span>
+            <ul class="exp-inclusions">
+              <li class="exp-inclusion-item">
+                <span class="bullet">—</span>
+                <span><strong>Corte premium</strong> con diagnóstico de estilo</span>
               </li>
-              <li class="included-item">
-                <span class="check">✓</span>
-                <span><strong>Barba premium</strong> con toalla caliente y navaja libre</span>
+              <li class="exp-inclusion-item">
+                <span class="bullet">—</span>
+                <span><strong>Barba premium</strong> con ritual de toalla caliente y navaja libre</span>
               </li>
-              <li class="included-item">
-                <span class="check">✓</span>
+              <li class="exp-inclusion-item">
+                <span class="bullet">—</span>
                 <span><strong>Perfilado de ceja de precisión</strong></span>
               </li>
-              <li class="included-item">
-                <span class="check">✓</span>
+              <li class="exp-inclusion-item">
+                <span class="bullet">—</span>
                 <span><strong>Limpieza facial profunda</strong> con exfoliación</span>
               </li>
             </ul>
           </div>
 
-          <button type="button" class="btn-card-select primary btn-select-package" data-package-id="pkg-black-label" data-package-name="Cavernícolas Black Label" data-package-price="430">
-            <span>Elegir Experiencia Black Label</span>
+          <button type="button" class="btn-select-package" data-package-id="pkg-black-label" data-package-name="Cabernicolas Black Label" data-package-price="430">
+            Seleccionar Black Label
           </button>
         </div>
 
-        <!-- Experiencia 2: Cavernícolas Executive -->
-        <div class="experience-card">
+        <!-- Experiencia 2: Executive -->
+        <div class="experience-item">
           <div>
-            <div class="mb-2">
-              <span class="text-[11px] font-bold text-gold-400 uppercase tracking-widest block mb-1">Cuidado Ejecutivo</span>
-              <h3 class="font-cinzel text-2xl font-bold text-white">Cavernícolas Executive</h3>
+            <span class="exp-tier">Cuidado Ejecutivo</span>
+            <h3 class="exp-title">Executive</h3>
+            
+            <div class="exp-price-row">
+              <span class="exp-price-amount">$380</span>
+              <span class="exp-price-currency">MXN</span>
             </div>
 
-            <div class="price-display">
-              <span class="price-number text-white">$380</span>
-              <span class="price-currency">MXN</span>
-            </div>
-
-            <p class="text-xs text-gray-400 italic border-l-2 border-white/20 pl-3 my-4">
-              El paquete perfecto para el caballero ejecutivo que requiere presencia impecable y piel energizada.
+            <p class="exp-summary">
+              Diseñado para el hombre activo que proyecta elegancia constante: cabello y barba impecables complementados con un facial revitalizante de frescura inmediata.
             </p>
 
-            <ul class="included-list">
-              <li class="included-item">
-                <span class="check">✓</span>
-                <span><strong>Corte premium</strong> con acabado profesional</span>
+            <ul class="exp-inclusions">
+              <li class="exp-inclusion-item">
+                <span class="bullet">—</span>
+                <span><strong>Corte premium</strong> con peinado de autor</span>
               </li>
-              <li class="included-item">
-                <span class="check">✓</span>
-                <span><strong>Barba premium</strong> con perfilado a navaja</span>
+              <li class="exp-inclusion-item">
+                <span class="bullet">—</span>
+                <span><strong>Barba premium</strong> con toalla caliente y bálsamo</span>
               </li>
-              <li class="included-item">
-                <span class="check">✓</span>
+              <li class="exp-inclusion-item">
+                <span class="bullet">—</span>
                 <span><strong>Limpieza facial revitalizante</strong></span>
               </li>
             </ul>
           </div>
 
-          <button type="button" class="btn-card-select outline btn-select-package" data-package-id="pkg-executive" data-package-name="Cavernícolas Executive" data-package-price="380">
-            <span>Elegir Experiencia Executive</span>
+          <button type="button" class="btn-select-package" data-package-id="pkg-executive" data-package-name="Cabernicolas Executive" data-package-price="380">
+            Seleccionar Executive
           </button>
         </div>
 
-        <!-- Experiencia 3: Cavernícolas Essential -->
-        <div class="experience-card">
+        <!-- Experiencia 3: Essential -->
+        <div class="experience-item">
           <div>
-            <div class="mb-2">
-              <span class="text-[11px] font-bold text-gold-400 uppercase tracking-widest block mb-1">Esencial Clásico</span>
-              <h3 class="font-cinzel text-2xl font-bold text-white">Cavernícolas Essential</h3>
+            <span class="exp-tier">Esencial Distinguido</span>
+            <h3 class="exp-title">Essential</h3>
+            
+            <div class="exp-price-row">
+              <span class="exp-price-amount">$280</span>
+              <span class="exp-price-currency">MXN</span>
             </div>
 
-            <div class="price-display">
-              <span class="price-number text-white">$280</span>
-              <span class="price-currency">MXN</span>
-            </div>
-
-            <p class="text-xs text-gray-400 italic border-l-2 border-white/20 pl-3 my-4">
-              La combinación elemental para mantener una presencia distinguida y una mirada definida.
+            <p class="exp-summary">
+              La combinación elemental para una presencia refinada y sobria: corte de cabello con peinado estructurado y definición de cejas con navaja.
             </p>
 
-            <ul class="included-list">
-              <li class="included-item">
-                <span class="check">✓</span>
-                <span><strong>Corte premium</strong> con lavado y peinado</span>
+            <ul class="exp-inclusions">
+              <li class="exp-inclusion-item">
+                <span class="bullet">—</span>
+                <span><strong>Corte premium</strong> con lavado y producto de fijación</span>
               </li>
-              <li class="included-item">
-                <span class="check">✓</span>
+              <li class="exp-inclusion-item">
+                <span class="bullet">—</span>
                 <span><strong>Perfilado de ceja de precisión</strong></span>
               </li>
             </ul>
           </div>
 
-          <button type="button" class="btn-card-select outline btn-select-package" data-package-id="pkg-essential" data-package-name="Cavernícolas Essential" data-package-price="280">
-            <span>Elegir Experiencia Essential</span>
+          <button type="button" class="btn-select-package" data-package-id="pkg-essential" data-package-name="Cabernicolas Essential" data-package-price="280">
+            Seleccionar Essential
           </button>
         </div>
 
@@ -353,162 +299,125 @@
     </div>
   </section>
 
-  <!-- 5. Catálogo de Servicios: Categoría B - Servicios de Especialidad -->
-  <section id="servicios" class="section-padding bg-carbon-950 border-t border-white/5">
+  <!-- Sección: Servicios de Especialidad (Categoría B) -->
+  <section id="servicios" class="section-wrapper" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
       
-      <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="section-tag">Categoría B</span>
-        <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-wider mb-3">
-          ✂ Servicios de <span class="text-gold-gradient">Especialidad</span>
-        </h2>
-        <div class="gold-line mb-4"></div>
-        <p class="text-gray-400 text-sm sm:text-base font-light">
-          Complementa tu experiencia o agenda servicios individuales. Haz clic en <strong>+ Añadir</strong> para sumarlos a tu cita en tiempo real.
-        </p>
-      </div>
-
-      <!-- Stylized Specialty Menu Board with Dotted Leaders -->
-      <div class="specialty-board">
+      <div class="specialty-editorial-layout">
         
-        <!-- 1. Corte Clásico -->
-        <div class="specialty-row">
-          <div class="specialty-info">
-            <span class="specialty-num">01.</span>
-            <span class="specialty-title">Corte Clásico de Cabello</span>
-            <p class="text-xs text-gray-400 mt-0.5">Tijera o máquina, lavado y producto de fijación premium.</p>
-          </div>
-          <div class="specialty-dots"></div>
-          <div class="specialty-action-block">
-            <span class="specialty-price">$200 MXN</span>
-            <button type="button" class="btn-add-item btn-add-specialty" data-id="srv-corte-clasico" data-name="Corte Clásico de Cabello" data-price="200" aria-label="Añadir Corte Clásico">
-              <span class="btn-text">+ Añadir</span>
-            </button>
+        <!-- Sidebar Info -->
+        <div class="specialty-sidebar">
+          <span class="editorial-tag">A la Carta</span>
+          <h2 class="editorial-title" style="font-size: 2.25rem;">Servicios de Especialidad</h2>
+          <p class="editorial-subtitle" style="font-size: 0.92rem; margin-top: 1rem;">
+            Tratamientos individuales para complementar tu experiencia o agendar de forma específica. Haz clic en <strong>+ Añadir</strong> para incorporarlos a tu reserva.
+          </p>
+          <div style="margin-top: 2rem;">
+            <a href="#reservar" class="btn-cta-secondary" style="font-size: 0.78rem; padding: 0.75rem 1.25rem;">
+              Ver bandeja de reserva ↓
+            </a>
           </div>
         </div>
 
-        <!-- 2. Afeitado Tradicional -->
-        <div class="specialty-row">
-          <div class="specialty-info">
-            <span class="specialty-num">02.</span>
-            <span class="specialty-title">Afeitado Tradicional de Barba</span>
-            <p class="text-xs text-gray-400 mt-0.5">Navaja de precisión, toalla caliente y bálsamo hidratante.</p>
+        <!-- Specialty List -->
+        <div class="specialty-menu-grid">
+          
+          <!-- 1. Corte Clásico -->
+          <div class="specialty-line-item">
+            <div class="specialty-item-body">
+              <h4 class="specialty-item-name">Corte Clásico de Cabello</h4>
+              <p class="specialty-item-desc">A máquina o tijera, lavado refrescante y peinado con producto premium.</p>
+            </div>
+            <div class="specialty-item-pricing">
+              <span class="specialty-price-val">$200 MXN</span>
+              <button type="button" class="btn-add-specialty" data-id="srv-corte-clasico" data-name="Corte Clásico de Cabello" data-price="200" aria-label="Añadir Corte Clásico">+ Añadir</button>
+            </div>
           </div>
-          <div class="specialty-dots"></div>
-          <div class="specialty-action-block">
-            <span class="specialty-price">$150 MXN</span>
-            <button type="button" class="btn-add-item btn-add-specialty" data-id="srv-afeitado-barba" data-name="Afeitado Tradicional de Barba" data-price="150" aria-label="Añadir Afeitado Tradicional">
-              <span class="btn-text">+ Añadir</span>
-            </button>
-          </div>
-        </div>
 
-        <!-- 3. Perfilado de bigote -->
-        <div class="specialty-row">
-          <div class="specialty-info">
-            <span class="specialty-num">03.</span>
-            <span class="specialty-title">Perfilado de bigote de precisión</span>
-            <p class="text-xs text-gray-400 mt-0.5">Alineación simétrica y recorte detallado con tijera y navaja.</p>
+          <!-- 2. Afeitado Tradicional -->
+          <div class="specialty-line-item">
+            <div class="specialty-item-body">
+              <h4 class="specialty-item-name">Afeitado Tradicional de Barba</h4>
+              <p class="specialty-item-desc">Ritual de toalla caliente, navaja de precisión y bálsamo calmante.</p>
+            </div>
+            <div class="specialty-item-pricing">
+              <span class="specialty-price-val">$150 MXN</span>
+              <button type="button" class="btn-add-specialty" data-id="srv-afeitado-barba" data-name="Afeitado Tradicional de Barba" data-price="150" aria-label="Añadir Afeitado Tradicional">+ Añadir</button>
+            </div>
           </div>
-          <div class="specialty-dots"></div>
-          <div class="specialty-action-block">
-            <span class="specialty-price">$100 MXN</span>
-            <button type="button" class="btn-add-item btn-add-specialty" data-id="srv-perfilado-bigote" data-name="Perfilado de bigote de precisión" data-price="100" aria-label="Añadir Perfilado de bigote">
-              <span class="btn-text">+ Añadir</span>
-            </button>
-          </div>
-        </div>
 
-        <!-- 4. Depilación nasal premium -->
-        <div class="specialty-row">
-          <div class="specialty-info">
-            <span class="specialty-num">04.</span>
-            <span class="specialty-title">Depilación nasal premium</span>
-            <p class="text-xs text-gray-400 mt-0.5">Cera tibia hipoalergénica sin dolor para respiración despejada.</p>
+          <!-- 3. Perfilado de Bigote -->
+          <div class="specialty-line-item">
+            <div class="specialty-item-body">
+              <h4 class="specialty-item-name">Perfilado de bigote de precisión</h4>
+              <p class="specialty-item-desc">Alineación simétrica, recorte artesanal con tijera y navaja.</p>
+            </div>
+            <div class="specialty-item-pricing">
+              <span class="specialty-price-val">$100 MXN</span>
+              <button type="button" class="btn-add-specialty" data-id="srv-perfilado-bigote" data-name="Perfilado de bigote de precisión" data-price="100" aria-label="Añadir Perfilado de bigote">+ Añadir</button>
+            </div>
           </div>
-          <div class="specialty-dots"></div>
-          <div class="specialty-action-block">
-            <span class="specialty-price">$100 MXN</span>
-            <button type="button" class="btn-add-item btn-add-specialty" data-id="srv-depilacion-nasal" data-name="Depilación nasal premium" data-price="100" aria-label="Añadir Depilación nasal">
-              <span class="btn-text">+ Añadir</span>
-            </button>
-          </div>
-        </div>
 
-        <!-- 5. Limpieza profunda carbón activado -->
-        <div class="specialty-row">
-          <div class="specialty-info">
-            <span class="specialty-num">05.</span>
-            <span class="specialty-title">Limpieza profunda de carbón activado</span>
-            <p class="text-xs text-gray-400 mt-0.5">Mascarilla negra purificante que remueve impurezas y puntos negros.</p>
+          <!-- 4. Depilación Nasal -->
+          <div class="specialty-line-item">
+            <div class="specialty-item-body">
+              <h4 class="specialty-item-name">Depilación nasal premium</h4>
+              <p class="specialty-item-desc">Cera tibia hipoalergénica sin molestias para una respiración limpia.</p>
+            </div>
+            <div class="specialty-item-pricing">
+              <span class="specialty-price-val">$100 MXN</span>
+              <button type="button" class="btn-add-specialty" data-id="srv-depilacion-nasal" data-name="Depilación nasal premium" data-price="100" aria-label="Añadir Depilación nasal">+ Añadir</button>
+            </div>
           </div>
-          <div class="specialty-dots"></div>
-          <div class="specialty-action-block">
-            <span class="specialty-price">$90 MXN</span>
-            <button type="button" class="btn-add-item btn-add-specialty" data-id="srv-carbon-activado" data-name="Limpieza profunda de carbón activado" data-price="90" aria-label="Añadir Carbón activado">
-              <span class="btn-text">+ Añadir</span>
-            </button>
-          </div>
-        </div>
 
-        <!-- 6. Perfilado de ceja -->
-        <div class="specialty-row">
-          <div class="specialty-info">
-            <span class="specialty-num">06.</span>
-            <span class="specialty-title">Perfilado de ceja de precisión</span>
-            <p class="text-xs text-gray-400 mt-0.5">Diseño masculino sobrio y natural con navaja para enmarcar la mirada.</p>
+          <!-- 5. Carbón Activado -->
+          <div class="specialty-line-item">
+            <div class="specialty-item-body">
+              <h4 class="specialty-item-name">Limpieza profunda de carbón activado</h4>
+              <p class="specialty-item-desc">Mascarilla peel-off purificante contra impurezas y puntos negros.</p>
+            </div>
+            <div class="specialty-item-pricing">
+              <span class="specialty-price-val">$90 MXN</span>
+              <button type="button" class="btn-add-specialty" data-id="srv-carbon-activado" data-name="Limpieza profunda de carbón activado" data-price="90" aria-label="Añadir Carbón activado">+ Añadir</button>
+            </div>
           </div>
-          <div class="specialty-dots"></div>
-          <div class="specialty-action-block">
-            <span class="specialty-price">$70 MXN</span>
-            <button type="button" class="btn-add-item btn-add-specialty" data-id="srv-perfilado-ceja" data-name="Perfilado de ceja de precisión" data-price="70" aria-label="Añadir Perfilado de ceja">
-              <span class="btn-text">+ Añadir</span>
-            </button>
-          </div>
-        </div>
 
-        <!-- 7. Facial revitalizante express -->
-        <div class="specialty-row">
-          <div class="specialty-info">
-            <span class="specialty-num">07.</span>
-            <span class="specialty-title">Facial revitalizante express</span>
-            <p class="text-xs text-gray-400 mt-0.5">Tónico botánico refrescante con hidratación anti-fatiga.</p>
+          <!-- 6. Perfilado de Ceja -->
+          <div class="specialty-line-item">
+            <div class="specialty-item-body">
+              <h4 class="specialty-item-name">Perfilado de ceja de precisión</h4>
+              <p class="specialty-item-desc">Diseño masculino sobrio y natural con navaja libre para enmarcar la mirada.</p>
+            </div>
+            <div class="specialty-item-pricing">
+              <span class="specialty-price-val">$70 MXN</span>
+              <button type="button" class="btn-add-specialty" data-id="srv-perfilado-ceja" data-name="Perfilado de ceja de precisión" data-price="70" aria-label="Añadir Perfilado de ceja">+ Añadir</button>
+            </div>
           </div>
-          <div class="specialty-dots"></div>
-          <div class="specialty-action-block">
-            <span class="specialty-price">$50 MXN</span>
-            <button type="button" class="btn-add-item btn-add-specialty" data-id="srv-facial-express" data-name="Facial revitalizante express" data-price="50" aria-label="Añadir Facial express">
-              <span class="btn-text">+ Añadir</span>
-            </button>
-          </div>
-        </div>
 
-        <!-- 8. Diseño freestyle personalizado -->
-        <div class="specialty-row">
-          <div class="specialty-info">
-            <span class="specialty-num">08.</span>
-            <span class="specialty-title">Diseño freestyle personalizado</span>
-            <p class="text-xs text-gray-400 mt-0.5">Líneas, figuras geométricas y degradados artísticos de autor.</p>
+          <!-- 7. Facial Express -->
+          <div class="specialty-line-item">
+            <div class="specialty-item-body">
+              <h4 class="specialty-item-name">Facial revitalizante express</h4>
+              <p class="specialty-item-desc">Tónico botánico refrescante con hidratación anti-fatiga para piel activa.</p>
+            </div>
+            <div class="specialty-item-pricing">
+              <span class="specialty-price-val">$50 MXN</span>
+              <button type="button" class="btn-add-specialty" data-id="srv-facial-express" data-name="Facial revitalizante express" data-price="50" aria-label="Añadir Facial express">+ Añadir</button>
+            </div>
           </div>
-          <div class="specialty-dots"></div>
-          <div class="specialty-action-block">
-            <span class="specialty-price">$50 MXN</span>
-            <button type="button" class="btn-add-item btn-add-specialty" data-id="srv-freestyle" data-name="Diseño freestyle personalizado" data-price="50" aria-label="Añadir Diseño freestyle">
-              <span class="btn-text">+ Añadir</span>
-            </button>
-          </div>
-        </div>
 
-        <!-- Bottom Tip -->
-        <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="text-xs text-gray-400 flex items-center gap-2">
-            <span class="text-gold-400">💡 Tip:</span>
-            <span>Puedes seleccionar una experiencia completa y sumar cualquier especialidad.</span>
+          <!-- 8. Diseño Freestyle -->
+          <div class="specialty-line-item">
+            <div class="specialty-item-body">
+              <h4 class="specialty-item-name">Diseño freestyle personalizado</h4>
+              <p class="specialty-item-desc">Líneas, figuras geométricas y degradados artísticos a navaja.</p>
+            </div>
+            <div class="specialty-item-pricing">
+              <span class="specialty-price-val">$50 MXN</span>
+              <button type="button" class="btn-add-specialty" data-id="srv-freestyle" data-name="Diseño freestyle personalizado" data-price="50" aria-label="Añadir Diseño freestyle">+ Añadir</button>
+            </div>
           </div>
-          <a href="#reservar" class="btn-card-select outline text-xs py-2 px-4 w-auto">
-            Ir al resumen de reserva ↓
-          </a>
+
         </div>
 
       </div>
@@ -516,318 +425,257 @@
     </div>
   </section>
 
-  <!-- 6. Sistema de Citas en la App + Confirmación por WhatsApp -->
-  <section id="reservar" class="booking-section-wrapper">
+  <!-- Sección: Sistema de Citas Online -->
+  <section id="reservar" class="section-wrapper">
     <div class="container">
       
-      <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="section-tag">Paso a Paso</span>
-        <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-wider mb-3">
-          Sistema de <span class="text-gold-gradient">Citas Online</span>
-        </h2>
-        <div class="gold-line mb-4"></div>
-        <p class="text-gray-400 text-sm sm:text-base font-light">
-          Configura tus servicios, selecciona tu día y bloque horario. Recibe tu ticket digital y envía la confirmación inmediata a nuestro WhatsApp.
+      <div class="editorial-header" style="text-align: center; max-width: 680px; margin-left: auto; margin-right: auto;">
+        <span class="editorial-tag" style="justify-content: center;">Agenda en Línea</span>
+        <h2 class="editorial-title">Sistema de Citas Online</h2>
+        <p class="editorial-subtitle" style="margin-left: auto; margin-right: auto;">
+          Selecciona tus servicios, elige el día y bloque horario de tu preferencia, y confirma con tu folio oficial vía WhatsApp.
         </p>
       </div>
 
-      <!-- Booking Form Split Grid -->
-      <form id="booking-form" class="booking-split-layout" novalidate>
+      <div class="booking-editorial-container">
         
-        <!-- Left: Steps Form (7 cols) -->
-        <div>
+        <form id="booking-form" class="booking-two-col" novalidate>
           
-          <!-- Step 1: Servicios -->
-          <div class="step-card">
-            <div class="step-header">
-              <span class="step-badge">1</span>
-              <div>
-                <h3 class="font-cinzel text-lg font-bold text-white">Servicios Seleccionados</h3>
-                <p class="text-xs text-gray-400">Elige al menos 1 experiencia o servicio de especialidad</p>
+          <!-- Columna Izquierda: Pasos de Reserva -->
+          <div>
+            
+            <!-- Paso 1: Servicios -->
+            <div class="booking-step-block">
+              <div class="step-label-header">
+                <span class="step-counter">1</span>
+                <span class="step-heading">Selección de Servicios</span>
               </div>
-            </div>
 
-            <!-- Experiencia Cavernícolas Picker -->
-            <div class="p-3.5 rounded-xl border border-gold-500/30 bg-gold-500/5 mb-4">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-bold uppercase tracking-wider text-gold-300">★ Experiencia Cavernícolas</span>
-                <button type="button" id="btn-clear-package" class="text-xs text-gray-400 hover:text-red-400 transition-colors hidden">
-                  ✕ Quitar paquete
-                </button>
-              </div>
-              <div id="selected-package-display" class="text-sm font-medium text-gray-400">
-                Ninguna experiencia elegida (selecciónala arriba o haz clic abajo):
-              </div>
-              
-              <div class="pkg-picker-grid">
-                <button type="button" class="btn-pkg-choice btn-picker-pkg" data-pkg-id="pkg-black-label" data-pkg-name="Cavernícolas Black Label" data-pkg-price="430">
-                  <span class="block font-bold text-xs text-white">Black Label</span>
-                  <span class="text-xs text-gold-400 font-bold">$430 MXN</span>
-                </button>
-                <button type="button" class="btn-pkg-choice btn-picker-pkg" data-pkg-id="pkg-executive" data-pkg-name="Cavernícolas Executive" data-pkg-price="380">
-                  <span class="block font-bold text-xs text-white">Executive</span>
-                  <span class="text-xs text-gold-400 font-bold">$380 MXN</span>
-                </button>
-                <button type="button" class="btn-pkg-choice btn-picker-pkg" data-pkg-id="pkg-essential" data-pkg-name="Cavernícolas Essential" data-pkg-price="280">
-                  <span class="block font-bold text-xs text-white">Essential</span>
-                  <span class="text-xs text-gold-400 font-bold">$280 MXN</span>
-                </button>
-              </div>
-            </div>
+              <!-- Paquete seleccionado -->
+              <div style="background: var(--bg-deep); border: 1px solid var(--border-subtle); border-radius: var(--radius-xs); padding: 1rem; margin-bottom: 1.25rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--accent-bronze); letter-spacing: 0.1em;">Experiencia Principal</span>
+                  <button type="button" id="btn-clear-package" style="background: transparent; border: none; font-size: 0.75rem; color: #f87171; cursor: pointer;" class="hidden">
+                    ✕ Quitar
+                  </button>
+                </div>
+                
+                <div id="selected-package-display" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                  Ninguna experiencia elegida (selecciónala arriba o haz clic abajo):
+                </div>
 
-            <!-- Especialidades extras -->
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-gray-300 block mb-1">
-                ✂ Servicios de Especialidad Adicionales
-              </span>
-              <div id="booking-specialties-chips" class="specialties-chips-grid">
-                <!-- Populated dynamically via JS -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 2: Datos del Caballero -->
-          <div class="step-card">
-            <div class="step-header">
-              <span class="step-badge">2</span>
-              <div>
-                <h3 class="font-cinzel text-lg font-bold text-white">Datos del Caballero</h3>
-                <p class="text-xs text-gray-400">Para tu registro y comprobante digital</p>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="client-name" class="form-label">Nombre Completo <span class="text-gold-400">*</span></label>
-              <input type="text" id="client-name" name="client-name" required placeholder="Ej. Roberto Martínez García" class="form-input-field" autocomplete="name">
-              <p id="err-client-name" class="field-error-msg hidden">Por favor ingresa tu nombre completo.</p>
-            </div>
-
-            <div class="form-group" style="margin-bottom: 0;">
-              <label for="client-phone" class="form-label">Teléfono WhatsApp (10 dígitos) <span class="text-gold-400">*</span></label>
-              <input type="tel" id="client-phone" name="client-phone" required placeholder="Ej. 998 123 4567" class="form-input-field" autocomplete="tel">
-              <p id="err-client-phone" class="field-error-msg hidden">Ingresa un número telefónico válido a 10 dígitos.</p>
-            </div>
-          </div>
-
-          <!-- Step 3: Fecha y Horario Dinámico -->
-          <div class="step-card" style="margin-bottom: 0;">
-            <div class="step-header">
-              <span class="step-badge">3</span>
-              <div>
-                <h3 class="font-cinzel text-lg font-bold text-white">Fecha y Horario</h3>
-                <p class="text-xs text-gray-400">Bloques dinámicos según el día de la semana</p>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="appointment-date" class="form-label">Fecha de Cita <span class="text-gold-400">*</span></label>
-              <input type="date" id="appointment-date" name="appointment-date" required class="form-input-field cursor-pointer">
-              <p id="day-schedule-hint" class="text-xs text-gold-400 mt-1.5 flex items-center gap-1.5">
-                <span>ℹ</span> <span>Selecciona un día para desplegar los bloques de atención disponibles.</span>
-              </p>
-              <p id="err-appointment-date" class="field-error-msg hidden">Selecciona una fecha válida (no puede ser fecha pasada).</p>
-            </div>
-
-            <!-- Dynamic Time Slot Grid -->
-            <div class="form-group">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="form-label" style="margin-bottom: 0;">Horario Disponible <span class="text-gold-400">*</span></span>
-                <span id="slots-range-badge" class="text-[10px] text-gray-400 bg-carbon-800 px-2.5 py-0.5 rounded border border-white/10">10:00 AM - 8:00 PM</span>
-              </div>
-              <div id="slots-container" class="slots-grid">
-                <div class="col-span-full py-8 text-center text-gray-500 text-xs">
-                  Elige una fecha para ver los horarios disponibles
+                <div class="pkg-button-row">
+                  <button type="button" class="btn-picker-pkg" data-pkg-id="pkg-black-label" data-pkg-name="Cabernicolas Black Label" data-pkg-price="430">
+                    <strong>Black Label</strong>
+                    <span>$430 MXN</span>
+                  </button>
+                  <button type="button" class="btn-picker-pkg" data-pkg-id="pkg-executive" data-pkg-name="Cabernicolas Executive" data-pkg-price="380">
+                    <strong>Executive</strong>
+                    <span>$380 MXN</span>
+                  </button>
+                  <button type="button" class="btn-picker-pkg" data-pkg-id="pkg-essential" data-pkg-name="Cabernicolas Essential" data-pkg-price="280">
+                    <strong>Essential</strong>
+                    <span>$280 MXN</span>
+                  </button>
                 </div>
               </div>
-              <input type="hidden" id="selected-time-slot" name="selected-time-slot" required>
-              <p id="err-time-slot" class="field-error-msg hidden">Por favor elige un bloque horario de atención.</p>
+
+              <!-- Especialidades Chips -->
+              <div>
+                <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.08em; display: block; margin-bottom: 0.25rem;">
+                  Servicios de Especialidad Adicionales
+                </span>
+                <div id="booking-specialties-chips" class="specialty-chips-wrap">
+                  <!-- Se puebla dinámicamente con app.js -->
+                </div>
+              </div>
             </div>
 
-            <!-- Optional Notes -->
-            <div class="form-group" style="margin-bottom: 0;">
-              <div class="flex items-center justify-between mb-1">
-                <label for="client-notes" class="form-label" style="margin-bottom: 0;">Notas o requerimientos especiales</label>
-                <span class="text-[10px] text-gray-500">Opcional</span>
+            <!-- Paso 2: Fecha y Horario Dinámico -->
+            <div class="booking-step-block">
+              <div class="step-label-header">
+                <span class="step-counter">2</span>
+                <span class="step-heading">Fecha y Horario de Atención</span>
               </div>
-              <textarea id="client-notes" name="client-notes" rows="2" placeholder="Ej. Barbero de preferencia, estilo de corte o detalles de barba..." class="form-input-field" style="resize: none;"></textarea>
+
+              <div class="form-field-group">
+                <label for="appointment-date" class="field-label">Fecha de Cita *</label>
+                <input type="date" id="appointment-date" name="appointment-date" required class="field-input cursor-pointer">
+                <p id="day-schedule-hint" style="font-size: 0.75rem; color: var(--accent-bronze); margin-top: 0.35rem;">
+                  Selecciona un día para desplegar los bloques de atención disponibles.
+                </p>
+                <p id="err-appointment-date" class="field-error hidden">Selecciona una fecha válida (no puede ser fecha pasada).</p>
+              </div>
+
+              <!-- Bloques de horario -->
+              <div class="form-field-group" style="margin-bottom: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem;">
+                  <span class="field-label" style="margin-bottom: 0;">Horario Disponible *</span>
+                  <span id="slots-range-badge" style="font-size: 0.72rem; font-family: var(--font-mono); color: var(--text-muted); background: var(--bg-deep); padding: 0.2rem 0.5rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle);">10:00 AM – 8:00 PM</span>
+                </div>
+                
+                <div id="slots-container" class="slots-container-grid">
+                  <div style="grid-column: 1/-1; padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.8rem;">
+                    Elige una fecha para ver los horarios disponibles
+                  </div>
+                </div>
+                <input type="hidden" id="selected-time-slot" name="selected-time-slot" required>
+                <p id="err-time-slot" class="field-error hidden">Por favor elige un bloque horario de atención.</p>
+              </div>
             </div>
+
+            <!-- Paso 3: Datos del Caballero -->
+            <div class="booking-step-block">
+              <div class="step-label-header">
+                <span class="step-counter">3</span>
+                <span class="step-heading">Datos del Caballero</span>
+              </div>
+
+              <div class="form-field-group">
+                <label for="client-name" class="field-label">Nombre Completo *</label>
+                <input type="text" id="client-name" name="client-name" required placeholder="Ej. Roberto Martínez García" class="field-input" autocomplete="name">
+                <p id="err-client-name" class="field-error hidden">Por favor ingresa tu nombre completo.</p>
+              </div>
+
+              <div class="form-field-group">
+                <label for="client-phone" class="field-label">Teléfono WhatsApp (10 dígitos) *</label>
+                <input type="tel" id="client-phone" name="client-phone" required placeholder="Ej. 998 123 4567" class="field-input" autocomplete="tel">
+                <p id="err-client-phone" class="field-error hidden">Ingresa un número telefónico válido a 10 dígitos.</p>
+              </div>
+
+              <div class="form-field-group" style="margin-bottom: 0;">
+                <label for="client-notes" class="field-label">Requerimientos o notas especiales (Opcional)</label>
+                <textarea id="client-notes" name="client-notes" rows="2" placeholder="Ej. Barbero de preferencia, estilo de corte o detalles de toalla caliente..." class="field-input" style="resize: none;"></textarea>
+              </div>
+            </div>
+
           </div>
 
-        </div>
+          <!-- Columna Derecha: Resumen de Cita Tipo Recibo -->
+          <div>
+            <div class="booking-summary-panel">
+              <h3 class="summary-heading">Resumen de Reserva</h3>
 
-        <!-- Right: Sticky Live Receipt Summary (5 cols) -->
-        <div>
-          <div class="receipt-box">
-            
-            <div class="receipt-header">
-              <span class="font-cinzel text-xs tracking-widest text-gold-gradient font-bold uppercase">Resumen de tu Cita</span>
-            </div>
-
-            <div class="receipt-body">
-              
-              <div class="border-b border-white/10 pb-3 mb-3">
-                <span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold block">Cavernícolas BarberShop</span>
-                <h4 class="font-cinzel text-lg font-bold text-white">Detalle de Experiencia</h4>
-              </div>
-
-              <!-- Selected Items List -->
-              <div id="summary-items-list" class="receipt-items-container">
-                <div class="py-8 text-center text-gray-500 italic text-xs">
+              <div id="summary-items-list" class="summary-items-box">
+                <div style="padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.82rem; font-style: italic;">
                   Aún no has agregado ningún servicio o experiencia.
                 </div>
               </div>
 
-              <!-- Subtotal & Total -->
-              <div class="border-t border-dashed border-white/20 pt-3 mt-3 space-y-2">
-                <div class="flex justify-between text-xs text-gray-400">
-                  <span>Cantidad de servicios:</span>
-                  <span id="summary-count-services" class="font-semibold text-white">0</span>
-                </div>
-                <div class="flex justify-between items-baseline pt-2 border-t border-white/10">
-                  <span class="font-cinzel text-sm uppercase tracking-wider text-gray-200 font-bold">Total a Pagar:</span>
-                  <div class="text-right">
-                    <span id="summary-total-price" class="font-cinzel text-3xl font-black text-gold-gradient">$0</span>
-                    <span class="text-xs uppercase text-gold-400 font-bold ml-1">MXN</span>
-                  </div>
+              <!-- Recuento y Total -->
+              <div style="font-size: 0.8rem; color: var(--text-secondary); display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span>Servicios incluidos:</span>
+                <span id="summary-count-services" style="font-weight: 700; color: var(--text-primary);">0</span>
+              </div>
+
+              <div class="summary-total-row">
+                <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Total a Liquidar:</span>
+                <div>
+                  <span id="summary-total-price" class="total-amount-display">$0</span>
+                  <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-bronze); margin-left: 0.2rem;">MXN</span>
                 </div>
               </div>
 
-              <!-- Date & Time Preview -->
-              <div class="bg-carbon-900 rounded-lg p-3 mt-4 border border-white/5 text-xs space-y-1">
-                <div class="flex justify-between">
-                  <span class="text-gray-400">Fecha elegida:</span>
-                  <span id="preview-date" class="text-white font-medium">Por definir</span>
+              <!-- Previsualización de Fecha y Hora -->
+              <div style="background: var(--bg-surface); padding: 0.85rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); font-size: 0.78rem; display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted);">Fecha:</span>
+                  <strong id="preview-date" style="color: var(--text-primary);">Por definir</strong>
                 </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-400">Horario:</span>
-                  <span id="preview-time" class="text-gold-400 font-bold">Por definir</span>
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted);">Horario:</span>
+                  <strong id="preview-time" style="color: var(--accent-bronze);">Por definir</strong>
                 </div>
               </div>
 
-              <!-- Confirm Button -->
-              <div class="mt-6 space-y-3">
-                <button type="submit" id="btn-submit-booking" class="btn-confirm-booking">
-                  <span>Confirmar Cita</span>
-                  <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                </button>
-                <p class="text-[11px] text-center text-gray-400 flex items-center justify-center gap-1.5">
-                  <svg class="w-4 h-4 text-gold-400 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                  <span>Genera tu folio y confirma vía WhatsApp al instante.</span>
-                </p>
-              </div>
+              <!-- Botón Confirmar Cita -->
+              <button type="submit" id="btn-submit-booking" class="btn-submit-booking-primary">
+                <span>Confirmar Cita</span>
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </button>
 
+              <p style="font-size: 0.72rem; color: var(--text-muted); text-align: center; margin-top: 0.85rem; line-height: 1.4;">
+                Se generará tu comprobante digital y se abrirá WhatsApp con los detalles listos para enviar a la barbería.
+              </p>
             </div>
           </div>
-        </div>
 
-      </form>
+        </form>
+
+      </div>
 
     </div>
   </section>
 
-  <!-- 7. Sección de Horarios, Contacto y Ubicación -->
-  <section id="ubicacion" class="section-padding bg-carbon-900 border-t border-gold-500/10">
+  <!-- Sección: Horarios, Contacto y Ubicación -->
+  <section id="ubicacion" class="section-wrapper" style="border-top: 1px solid var(--border-subtle);">
     <div class="container">
       
-      <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="section-tag">Encuéntranos</span>
-        <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-wider mb-3">
-          Horarios y <span class="text-gold-gradient">Ubicación</span>
-        </h2>
-        <div class="gold-line mb-4"></div>
-        <p class="text-gray-400 text-sm sm:text-base font-light">
-          Ubicados estratégicamente en Cancún. Un santuario masculino con estacionamiento accesible y las mejores amenidades.
+      <div class="editorial-header">
+        <span class="editorial-tag">Visítanos</span>
+        <h2 class="editorial-title">Horarios y Ubicación</h2>
+        <p class="editorial-subtitle">
+          Ubicados en Paseos Kabah, Cancún. Estacionamiento accesible y amenidades de primera clase para una estancia relajada.
         </p>
       </div>
 
-      <div class="location-split-grid">
+      <div class="location-editorial-grid">
         
-        <!-- Info Cards Left -->
-        <div class="flex flex-col justify-between">
-          
-          <!-- Horarios -->
-          <div class="info-card-luxury">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-400">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <!-- Panel de Datos -->
+        <div class="schedule-card-panel">
+          <div>
+            <!-- Horarios -->
+            <div class="contact-row-item">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.6rem;">
+                <span class="contact-label">Horarios de Atención</span>
+                <span id="badge-open-status" style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.65rem; border-radius: var(--radius-pill); background: var(--status-emerald-bg); color: var(--status-emerald); border: 1px solid rgba(16, 185, 129, 0.3);">Abierto Ahora</span>
               </div>
-              <div>
-                <h3 class="font-cinzel text-lg font-bold text-white">Horarios de Atención</h3>
-                <span id="badge-open-status" class="status-badge-live open">Abierto Ahora</span>
+              <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle); font-size: 0.88rem;">
+                <span style="color: var(--text-secondary);">Lunes a Sábado:</span>
+                <strong style="color: var(--text-primary); font-family: var(--font-mono);">10:00 a.m. – 8:00 p.m.</strong>
               </div>
-            </div>
-
-            <div class="space-y-3 text-sm">
-              <div class="flex justify-between items-center py-2 border-b border-white/5">
-                <span class="text-gray-300 font-medium">Lunes a Sábado:</span>
-                <span class="text-gold-300 font-semibold font-mono text-xs">10:00 a.m. – 8:00 p.m.</span>
-              </div>
-              <div class="flex justify-between items-center py-2">
-                <span class="text-gray-300 font-medium">Domingo:</span>
-                <span class="text-gold-300 font-semibold font-mono text-xs">10:00 a.m. – 6:00 p.m.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contacto Directo -->
-          <div class="info-card-luxury">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-400">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-              </div>
-              <div>
-                <h3 class="font-cinzel text-lg font-bold text-white">Contacto Directo</h3>
-                <span class="text-xs text-gray-400">Atención personalizada</span>
+              <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.88rem;">
+                <span style="color: var(--text-secondary);">Domingo:</span>
+                <strong style="color: var(--text-primary); font-family: var(--font-mono);">10:00 a.m. – 6:00 p.m.</strong>
               </div>
             </div>
 
-            <div class="space-y-3 text-sm">
-              <div>
-                <span class="text-xs text-gray-400 block mb-1">Teléfono & WhatsApp:</span>
-                <div class="flex items-center gap-3">
-                  <a href="tel:+529983374945" class="text-white hover:text-gold-400 font-bold text-lg font-mono transition-colors">
-                    998 337 4945
-                  </a>
-                  <a href="https://wa.me/529983374945" target="_blank" rel="noopener" class="text-xs bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full hover:bg-emerald-500/30 transition-colors inline-flex items-center gap-1">
-                    <span>Chat WhatsApp</span>
-                  </a>
-                </div>
+            <!-- Contacto Directo -->
+            <div class="contact-row-item">
+              <span class="contact-label">Contacto Directo</span>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.35rem;">
+                <a href="tel:+529983374945" style="font-family: var(--font-mono); font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">
+                  998 337 4945
+                </a>
+                <a href="https://wa.me/529983374945" target="_blank" rel="noopener" style="font-size: 0.75rem; font-weight: 700; background: rgba(37, 211, 102, 0.15); color: #25D366; border: 1px solid rgba(37, 211, 102, 0.3); padding: 0.25rem 0.75rem; border-radius: var(--radius-pill);">
+                  Chat WhatsApp
+                </a>
               </div>
+            </div>
 
-              <div class="pt-2 border-t border-white/5">
-                <span class="text-xs text-gray-400 block mb-1">Dirección:</span>
-                <p class="text-gray-200 text-xs sm:text-sm font-medium leading-relaxed">
-                  Calle Prol. Av. Kabáh 1, Paseos Kabah,<br>
-                  77517 Cancún, Q.R., México.
-                </p>
-              </div>
+            <!-- Dirección -->
+            <div class="contact-row-item" style="margin-bottom: 0;">
+              <span class="contact-label">Dirección</span>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-top: 0.25rem;">
+                Calle Prol. Av. Kabáh 1, Paseos Kabah,<br>
+                77517 Cancún, Quintana Roo, México.
+              </p>
             </div>
           </div>
 
-          <!-- Botón Cómo Llegar -->
-          <a href="https://www.google.com/maps/search/?api=1&query=Calle+Prol.+Av.+Kab%C3%A1h+1,+Paseos+Kabah,+77517+Canc%C3%BAn,+Q.R." target="_blank" rel="noopener" class="btn-card-select primary text-center py-3.5 text-xs sm:text-sm">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            <span>Cómo Llegar en Google Maps</span>
-          </a>
-
+          <div style="margin-top: 2rem;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Calle+Prol.+Av.+Kab%C3%A1h+1,+Paseos+Kabah,+77517+Canc%C3%BAn,+Q.R." target="_blank" rel="noopener" class="btn-cta-primary" style="width: 100%; justify-content: center; font-size: 0.82rem;">
+              <span>Cómo Llegar en Google Maps</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
         </div>
 
-        <!-- Interactive Map Frame Right -->
+        <!-- Vista Embebida Google Maps -->
         <div>
-          <div class="map-container-frame">
-            <div class="map-top-bar">
-              <div class="flex items-center gap-2 text-xs text-gray-300">
-                <span class="text-gold-400">📍</span>
-                <strong class="text-white">Prol. Av. Kabáh 1, Paseos Kabah</strong>
-              </div>
-              <span class="text-[10px] text-gray-400">Cancún, Quintana Roo</span>
-            </div>
-            
+          <div class="map-embed-wrapper">
             <iframe 
-              title="Ubicación de Cavernícolas BarberShop Cancún"
-              class="map-iframe"
+              title="Ubicación oficial de Cabernicolas Barbershop en Cancún"
               src="https://maps.google.com/maps?q=Prolongacion+Avenida+Kabah+1,+Paseos+Kabah,+Cancun,+Quintana+Roo,+77517&t=&z=16&ie=UTF8&iwloc=&output=embed"
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade"
@@ -841,128 +689,115 @@
     </div>
   </section>
 
-  <!-- 8. Footer -->
-  <footer class="py-12 bg-carbon-950 border-t border-white/10">
-    <div class="container flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-      
+  <!-- Footer -->
+  <footer style="padding: 3rem 0; border-top: 1px solid var(--border-subtle); background: #07080a;">
+    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
       <div>
-        <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
-          <span class="font-cinzel font-black tracking-widest text-lg text-gold-gradient uppercase">Cavernícolas</span>
-          <span class="text-xs text-gray-500 uppercase">BarberShop</span>
-        </div>
-        <p class="text-xs text-gray-400 italic">"Experiencias diseñadas para hombres fieles"</p>
+        <span style="font-family: var(--font-serif); font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; color: var(--text-primary); text-transform: uppercase;">Cabernicolas Barbershop</span>
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">"Experiencias diseñadas para hombres fieles"</p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-400">
-        <a href="#experiencias" class="hover:text-gold-400 transition-colors">Experiencias</a>
-        <a href="#servicios" class="hover:text-gold-400 transition-colors">Servicios</a>
-        <a href="#reservar" class="hover:text-gold-400 transition-colors">Reservar Cita</a>
-        <a href="#ubicacion" class="hover:text-gold-400 transition-colors">Ubicación</a>
+      <div style="display: flex; gap: 1.5rem; font-size: 0.8rem; color: var(--text-secondary);">
+        <a href="#experiencias">Experiencias</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#reservar">Reservar Cita</a>
+        <a href="#ubicacion">Horarios</a>
       </div>
 
-      <div class="text-xs text-gray-500">
-        <p>© <span id="current-year">2026</span> Cavernícolas BarberShop.</p>
-        <p class="text-[10px] text-gray-600 mt-0.5">Todos los derechos reservados. Cancún, Q.R.</p>
+      <div style="font-size: 0.75rem; color: var(--text-muted);">
+        © <span id="current-year">2026</span> Cabernicolas Barbershop. Cancún, Q.R.
       </div>
-
     </div>
   </footer>
 
-  <!-- 9. Floating WhatsApp Button (Bottom-Right) -->
-  <div class="floating-whatsapp-wrap">
-    <a href="https://wa.me/529983374945?text=%C2%A1Hola%20Cavern%C3%ADcolas%20BarberShop!%20Deseo%20informaci%C3%B3n%20sobre%20sus%20experiencias%20y%20citas." 
+  <!-- Floating WhatsApp Action -->
+  <div class="floating-wa-anchor">
+    <a href="https://wa.me/529983374945?text=%C2%A1Hola%20Cabernicolas%20Barbershop!%20Deseo%20informaci%C3%B3n%20sobre%20sus%20experiencias%20y%20citas." 
        target="_blank" 
        rel="noopener"
        class="btn-floating-wa"
-       aria-label="Contactar por WhatsApp">
-      <span class="floating-wa-pulse"></span>
-      <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+       aria-label="Atención directa por WhatsApp">
+      <svg width="28" height="28" fill="#ffffff" viewBox="0 0 24 24">
         <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.42-.099.825zm-3.392-12.416c-5.514 0-10 4.486-10 10 0 1.761.458 3.418 1.261 4.866l-1.34 4.898 5.034-1.321c1.401.765 2.997 1.197 4.685 1.197 5.514 0 10-4.486 10-10s-4.486-10-10-10zm0 18.2c-1.503 0-2.946-.42-4.184-1.156l-.3-.178-2.981.782.796-2.906-.195-.31c-.812-1.293-1.248-2.802-1.248-4.372 0-4.521 3.679-8.2 8.2-8.2 4.52 0 8.2 3.679 8.2 8.2 0 4.522-3.68 8.2-8.2 8.2z"/>
       </svg>
-      <span class="wa-hover-tooltip">¿Dudas? Escríbenos al WhatsApp</span>
     </a>
   </div>
 
-  <!-- 10. Modal: Ticket Digital VIP de Confirmación -->
+  <!-- Modal 1: Ticket Digital de Confirmación (Comprobante VIP) -->
   <div id="modal-ticket" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="ticket-title">
-    <div class="modal-box-card">
+    <div class="modal-dialog-panel">
       
-      <div class="ticket-header-gradient">
-        <span class="text-[10px] uppercase font-black tracking-widest block">Comprobante Oficial de Reserva</span>
-        <h3 id="ticket-title" class="font-cinzel text-xl font-black uppercase">Cavernícolas BarberShop</h3>
-        <button type="button" id="btn-close-ticket-x" class="absolute top-3 right-3 text-black hover:text-white p-1 rounded-full text-lg leading-none font-bold" aria-label="Cerrar">
+      <div class="ticket-top-band">
+        <div>
+          <span style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-bronze);">Comprobante Oficial de Reserva</span>
+          <h3 id="ticket-title" style="font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">Cabernicolas Barbershop</h3>
+        </div>
+        <button type="button" id="btn-close-ticket-x" style="background: transparent; border: none; color: var(--text-muted); font-size: 1.25rem; cursor: pointer; padding: 0.25rem;" aria-label="Cerrar comprobante">
           ✕
         </button>
       </div>
 
-      <div class="p-6 space-y-4">
+      <div style="padding: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem;">
         
-        <!-- Folio & Status -->
-        <div class="flex justify-between items-center pb-3 border-b border-white/10">
+        <!-- Folio y Estado -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle);">
           <div>
-            <span class="text-[10px] uppercase tracking-wider text-gray-400 block font-semibold">Código de Reserva</span>
-            <span id="ticket-folio" class="font-mono text-xl font-bold text-gold-400">#CAV-00000</span>
+            <span style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); display: block;">Código de Cita</span>
+            <span id="ticket-folio" style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 700; color: var(--accent-bronze);">#CAV-00000</span>
           </div>
-          <div class="text-right">
-            <span class="text-[10px] uppercase tracking-wider text-gray-400 block font-semibold">Estado</span>
-            <span class="status-badge-live open text-[10px]">✓ Registrada</span>
+          <span style="font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); background: var(--status-emerald-bg); color: var(--status-emerald); border: 1px solid rgba(16, 185, 129, 0.3);">
+            ✓ Registrada en App
+          </span>
+        </div>
+
+        <!-- Caballero & Fecha -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; background: var(--bg-deep); padding: 1rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); font-size: 0.8rem;">
+          <div>
+            <span style="color: var(--text-muted); font-size: 0.72rem; text-transform: uppercase; display: block;">Caballero:</span>
+            <strong id="ticket-client-name" style="color: var(--text-primary); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Nombre</strong>
+            <span id="ticket-client-phone" style="color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.75rem;">Teléfono</span>
+          </div>
+          <div>
+            <span style="color: var(--text-muted); font-size: 0.72rem; text-transform: uppercase; display: block;">Cita Programada:</span>
+            <strong id="ticket-date" style="color: var(--text-primary); display: block;">Fecha</strong>
+            <span id="ticket-time" style="color: var(--accent-bronze); font-family: var(--font-mono); font-weight: 700;">Hora</span>
           </div>
         </div>
 
-        <!-- Customer & Date -->
-        <div class="grid grid-cols-2 gap-3 text-xs bg-carbon-800 p-3 rounded-xl border border-white/5">
-          <div>
-            <span class="text-gray-400 block text-[10px] uppercase">Caballero:</span>
-            <strong id="ticket-client-name" class="text-white text-sm font-semibold truncate block">Nombre</strong>
-            <span id="ticket-client-phone" class="text-gray-400 text-[11px] block mt-0.5">Teléfono</span>
-          </div>
-          <div>
-            <span class="text-gray-400 block text-[10px] uppercase">Fecha y Hora:</span>
-            <strong id="ticket-date" class="text-gold-300 text-xs sm:text-sm font-semibold block">Fecha</strong>
-            <span id="ticket-time" class="text-white text-xs font-mono font-bold block mt-0.5">Hora</span>
-          </div>
-        </div>
-
-        <!-- Services Breakdown -->
+        <!-- Desglose de Servicios -->
         <div>
-          <span class="text-[10px] uppercase font-semibold text-gray-400 tracking-wider block mb-1">Servicios Elegidos:</span>
-          <div id="ticket-services-list" class="space-y-1 text-xs max-h-36 overflow-y-auto border-y border-white/5 py-2">
-            <!-- Dynamic items -->
+          <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); font-weight: 700; display: block; margin-bottom: 0.5rem;">Servicios Solicitados:</span>
+          <div id="ticket-services-list" style="display: flex; flex-direction: column; gap: 0.35rem; max-height: 140px; overflow-y: auto; padding: 0.5rem 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); font-size: 0.8rem;">
+            <!-- Se inyecta dinámicamente -->
           </div>
         </div>
 
         <!-- Total -->
-        <div class="flex justify-between items-baseline pt-1">
-          <span class="font-cinzel text-sm uppercase text-gray-300 font-bold">Total a Liquidar:</span>
-          <div class="text-right">
-            <span id="ticket-total" class="font-cinzel text-2xl font-black text-gold-gradient">$0</span>
-            <span class="text-xs font-bold text-gold-400 ml-1">MXN</span>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--text-secondary);">Total a Liquidar:</span>
+          <div>
+            <span id="ticket-total" style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--text-primary);">$0</span>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-bronze); margin-left: 0.2rem;">MXN</span>
           </div>
         </div>
 
-        <!-- Notes -->
-        <div id="ticket-notes-container" class="text-[11px] text-gray-400 italic bg-carbon-800 p-2 rounded-lg border border-white/5 hidden">
+        <!-- Notas si existen -->
+        <div id="ticket-notes-container" style="background: var(--bg-deep); border: 1px solid var(--border-subtle); padding: 0.65rem 0.85rem; border-radius: var(--radius-xs); font-size: 0.75rem; color: var(--text-secondary); font-style: italic;" class="hidden">
           <span>Nota: </span><span id="ticket-notes-text"></span>
         </div>
 
-        <!-- Barcode styling -->
-        <div class="text-center pt-1">
-          <div class="barcode-stripe"></div>
-          <span class="text-[9px] font-mono tracking-widest text-gray-500 uppercase mt-1 block">EXPERIENCIA PREMIUM • CANCÚN, Q.R.</span>
-        </div>
-
-        <!-- Actions -->
-        <div class="pt-2 space-y-2">
+        <!-- Acciones -->
+        <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 0.5rem;">
           <a id="btn-ticket-whatsapp" href="#" target="_blank" rel="noopener" class="btn-send-whatsapp-confirm">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.42-.099.825zm-3.392-12.416c-5.514 0-10 4.486-10 10 0 1.761.458 3.418 1.261 4.866l-1.34 4.898 5.034-1.321c1.401.765 2.997 1.197 4.685 1.197 5.514 0 10-4.486 10-10s-4.486-10-10-10zm0 18.2c-1.503 0-2.946-.42-4.184-1.156l-.3-.178-2.981.782.796-2.906-.195-.31c-.812-1.293-1.248-2.802-1.248-4.372 0-4.521 3.679-8.2 8.2-8.2 4.52 0 8.2 3.679 8.2 8.2 0 4.522-3.68 8.2-8.2 8.2z"/></svg>
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.42-.099.825zm-3.392-12.416c-5.514 0-10 4.486-10 10 0 1.761.458 3.418 1.261 4.866l-1.34 4.898 5.034-1.321c1.401.765 2.997 1.197 4.685 1.197 5.514 0 10-4.486 10-10s-4.486-10-10-10zm0 18.2c-1.503 0-2.946-.42-4.184-1.156l-.3-.178-2.981.782.796-2.906-.195-.31c-.812-1.293-1.248-2.802-1.248-4.372 0-4.521 3.679-8.2 8.2-8.2 4.52 0 8.2 3.679 8.2 8.2 0 4.522-3.68 8.2-8.2 8.2z"/></svg>
             <span>Enviar confirmación por WhatsApp</span>
           </a>
 
-          <div class="flex gap-2">
-            <button type="button" id="btn-print-ticket" class="btn-card-select outline flex-1 py-2 text-xs">
-              🖨 Imprimir / Guardar
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="button" id="btn-print-ticket" class="btn-cta-secondary" style="flex: 1; justify-content: center; font-size: 0.78rem; padding: 0.65rem;">
+              Imprimir / Guardar
             </button>
-            <button type="button" id="btn-close-ticket" class="btn-card-select outline flex-1 py-2 text-xs">
+            <button type="button" id="btn-close-ticket" class="btn-cta-secondary" style="flex: 1; justify-content: center; font-size: 0.78rem; padding: 0.65rem;">
               Cerrar
             </button>
           </div>
@@ -973,26 +808,26 @@
     </div>
   </div>
 
-  <!-- 11. Modal: Mis Citas Guardadas (LocalStorage) -->
+  <!-- Modal 2: Mis Citas Guardadas (LocalStorage) -->
   <div id="modal-my-appointments" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="my-appointments-title">
-    <div class="modal-box-card" style="max-height: 85vh; display: flex; flex-direction: column;">
+    <div class="modal-dialog-panel" style="max-height: 85vh; display: flex; flex-direction: column;">
       
-      <div class="p-4 border-b border-white/10 flex items-center justify-between bg-carbon-800">
+      <div style="padding: 1.25rem 1.75rem; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; background: var(--bg-contrast);">
         <div>
-          <h3 id="my-appointments-title" class="font-cinzel text-lg font-bold text-white">Mis Citas Guardadas</h3>
-          <span class="text-xs text-gray-400">Historial local en este navegador</span>
+          <h3 id="my-appointments-title" style="font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">Mis Citas Guardadas</h3>
+          <span style="font-size: 0.72rem; color: var(--text-muted);">Historial local guardado en este navegador</span>
         </div>
-        <button type="button" id="btn-close-my-appointments-x" class="text-gray-400 hover:text-white text-lg font-bold p-1">
+        <button type="button" id="btn-close-my-appointments-x" style="background: transparent; border: none; color: var(--text-muted); font-size: 1.25rem; cursor: pointer; padding: 0.25rem;">
           ✕
         </button>
       </div>
 
-      <div id="my-appointments-list" class="p-5 overflow-y-auto space-y-3 flex-1">
-        <!-- Populated via JS -->
+      <div id="my-appointments-list" style="padding: 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; flex: 1;">
+        <!-- Se puebla dinámicamente con app.js -->
       </div>
 
-      <div class="p-4 border-t border-white/10 bg-carbon-950 flex justify-end">
-        <button type="button" id="btn-close-my-appointments" class="btn-card-select outline text-xs py-2 px-5 w-auto">
+      <div style="padding: 1rem 1.75rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end; background: var(--bg-deep);">
+        <button type="button" id="btn-close-my-appointments" class="btn-cta-secondary" style="font-size: 0.78rem; padding: 0.55rem 1.25rem;">
           Cerrar
         </button>
       </div>
@@ -1000,10 +835,10 @@
     </div>
   </div>
 
-  <!-- 12. Toast Alert Notification -->
+  <!-- Toast Alert -->
   <div id="toast" class="toast-bar hidden" role="alert">
-    <span id="toast-icon" class="text-gold-400 text-lg">✓</span>
-    <span id="toast-message" class="text-xs font-semibold text-white">Notificación</span>
+    <span id="toast-icon" style="color: var(--accent-bronze); font-size: 1rem;">✓</span>
+    <span id="toast-message" style="font-size: 0.8rem; color: var(--text-primary);">Notificación</span>
   </div>
 
   <!-- Application Logic -->

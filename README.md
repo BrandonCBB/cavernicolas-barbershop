@@ -1,50 +1,59 @@
-# Cavernícolas BarberShop 💈
+# Cabernicolas Barbershop 💈
 
-Aplicación web moderna, elegante y 100% responsiva (mobile-first) para **"Cavernícolas BarberShop"**, desarrollada con estética de lujo masculino clásico: fondo negro mate texturizado, acentos en dorado metálico (`#D4AF37`) y tipografía limpia de alta legibilidad.
+Plataforma web de identidad editorial y lujo contemporáneo para **"Cabernicolas Barbershop"**, concebida bajo las directrices de la skill **Frontend Design** de Anthropic: estética de atelier de autor, tipografía con carácter, composiciones asimétricas auténticas, paleta en negro carbón aterciopelado (`#0A0B0E`), marfil cálido (`#F5F2EB`) y bronce cepillado (`#C5A059`), sin clichés genéricos de IA.
 
 ---
 
-## 🌟 Características Principales
+## 🏛️ Sistema Visual & Filosofía de Diseño
 
-### 1. Identidad y Sección Hero
-- **Marca:** Cavernícolas BarberShop
-- **Slogan:** *"Experiencias diseñadas para hombres fieles"*
-- **Navegación Fija:** Enlaces directos a *Experiencias*, *Servicios*, *Reservar Cita* y *Horarios y Ubicación*.
-- **Indicador Dinámico en Vivo:** Detecta en tiempo real si la barbería está **Abierta** o **Cerrada** según la hora y día de Cancún, Q.R.
-- **Llamada a la Acción (CTA):** Botón principal *"Agendar mi experiencia"* con desplazamiento suave al sistema de reservas.
+- **Atmósfera:** Atelier masculino de precisión en Cancún. Cuero oscuro, navaja libre, toallas calientes y pausa ritual.
+- **Paleta de Tokens:**
+  - `Base Profunda:` `#0A0B0E` (Negro carbón mate con grano arquitectónico)
+  - `Superficies:` `#12141A` y `#181B22` (Planos oscuros contrastantes)
+  - `Texto Principal:` `#F5F2EB` (Marfil cálido orgánico, alta legibilidad)
+  - `Texto Secundario:` `#9EA3AE` (Gris neutro editorial)
+  - `Acento Bronce:` `#C5A059` (Bronce cálido cepillado con reserva intencional)
+  - `Estado Esmeralda:` `#10B981` (Para WhatsApp y estado "Abierto Ahora")
+- **Tipografía:**
+  - *Titulares de Marca:* **Cinzel** (Serif clásico con tracking y espaciado editorial).
+  - *Cuerpo & UI:* **Plus Jakarta Sans** (Humanista contemporáneo, limpio y funcional).
+  - *Metadatos & Folios:* **Space Grotesk** (Monospace proporcional para cifras y tickets).
 
-### 2. Catálogo de Servicios
-- **Categoría A: ★ Experiencias Cavernícolas (Paquetes recomendados):**
-  - **Cavernícolas Black Label — $430 MXN** *(Insignia dorada: "EL MÁS ELEGIDO")*: Corte premium + Barba premium + Perfilado de ceja de precisión + Limpieza facial profunda.
-  - **Cavernícolas Executive — $380 MXN**: Corte premium + Barba premium + Limpieza facial revitalizante.
-  - **Cavernícolas Essential — $280 MXN**: Corte premium + Perfilado de ceja de precisión.
-- **Categoría B: ✂ Servicios de Especialidad (Menú con líneas punteadas):**
-  - Corte Clásico de Cabello — $200 MXN
-  - Afeitado Tradicional de Barba — $150 MXN
-  - Perfilado de bigote de precisión — $100 MXN
-  - Depilación nasal premium — $100 MXN
-  - Limpieza profunda de carbón activado — $90 MXN
-  - Perfilado de ceja de precisión — $70 MXN
-  - Facial revitalizante express — $50 MXN
-  - Diseño freestyle personalizado — $50 MXN
+---
 
-### 3. Módulo Interactivo de Citas + Confirmación por WhatsApp
-- **Selección Múltiple y Cálculo en Tiempo Real:** Puedes elegir una experiencia principal y/o sumar uno o varios servicios de especialidad, calculando el total al instante.
-- **Horarios Dinámicos Inteligentes:**
-  - **Lunes a Sábado:** Bloques cada 30 minutos entre **10:00 a.m. y 8:00 p.m.**
-  - **Domingo:** Bloques cada 30 minutos entre **10:00 a.m. y 6:00 p.m.**
-  - Validación de fechas pasadas y bloqueo automático de horarios transcurridos en el día en curso.
-- **Flujo de Confirmación:**
-  1. Genera un **Comprobante / Ticket Digital Oficial** con Folio único (ej. `#CAV-84920`), resumen desglosado, total a liquidar y código de barras estilizado.
-  2. Guarda la reserva localmente en el navegador (`localStorage`) con modal para **"Mis Citas"** y opción de cancelación.
-  3. Botón de **"Enviar confirmación por WhatsApp"** que redirige a `https://wa.me/529983374945` con mensaje perfectamente formateado y detallado con la información completa de la cita.
+## 🌟 Estructura de Secciones
 
-### 4. Horarios, Contacto y Ubicación
-- **Horarios:** Lunes a Sábado de 10:00 a.m. a 8:00 p.m. | Domingo de 10:00 a.m. a 6:00 p.m.
-- **Teléfono / WhatsApp:** 998 337 4945
-- **Dirección:** Calle Prol. Av. Kabáh 1, Paseos Kabah, 77517 Cancún, Q.R.
-- **Mapa Interactivo:** Mapa embebido estilizado con coordenadas exactas y botón directo *"Cómo llegar en Google Maps"*.
-- **Botón Flotante:** Acceso rápido a WhatsApp en la esquina inferior derecha con tooltip y efecto de pulso.
+### 1. Portada (Hero Editorial)
+- Composición asimétrica: Manifiesto de marca a la izquierda con llamadas a la acción directas y fotografía auténtica de barbería artesanal a la derecha.
+- Barra horizontal de valores de artesanía (*Vapor & Navaja Libre*, *Cortesía de Bienvenida*, *Barberos Especialistas*, *Confirmación Inmediata*) en sustitución de las tarjetas SaaS genéricas.
+- Indicador en vivo de apertura según el horario oficial de Cancún (UTC-5).
+
+### 2. Experiencias Cabernicolas (Categoría A)
+- Exposición arquitectónica de 3 columnas destacando **Black Label ($430 MXN)** como experiencia insignia (*Flagship*), junto a **Executive ($380 MXN)** y **Essential ($280 MXN)**.
+- Botones de selección directa que preseleccionan el paquete y desplazan al usuario suavemente al módulo de reserva.
+
+### 3. Servicios de Especialidad (Categoría B)
+- Menú editorial estructurado con líneas divisorias sobrias, precios claros y botones interactivos `+ Añadir` que se sincronizan en tiempo real con la bandeja de reserva.
+
+### 4. Sistema de Citas Online (3 Pasos Intuitivos)
+- **Paso 1 (Servicios):** Experiencia elegida y chips interactivos de especialidades adicionales con subtotal dinámico.
+- **Paso 2 (Fecha y Horario):** Selector de fecha con restricción de fechas pasadas y bloques horarios inteligentes:
+  - *Lunes a Sábado:* 10:00 a.m. a 8:00 p.m.
+  - *Domingo:* 10:00 a.m. a 6:00 p.m.
+  - Bloqueo automático de horas ya transcurridas en el día en curso.
+- **Paso 3 (Datos del Caballero):** Nombre, teléfono a 10 dígitos y notas opcionales.
+- **Bandeja de Resumen Fija:** Cálculo en tiempo real, desglose de servicios y botón principal *"Confirmar Cita"*.
+
+### 5. Flujo de Confirmación & WhatsApp
+- **Comprobante Digital VIP:** Folio único (ej. `#CAV-78421`), desglose de servicios, fecha, hora, total a liquidar y código de barras estilizado.
+- **Botón directo a WhatsApp:** Abre `https://wa.me/529983374945` con el mensaje formateado con todos los detalles de la cita.
+- **Módulo "Mis Citas":** Almacenamiento local persistente (`localStorage`) que permite revisar o cancelar citas guardadas.
+
+### 6. Horarios, Contacto y Ubicación
+- Estado en tiempo real (*Abierto Ahora* / *Cerrado por ahora*).
+- Dirección oficial en Cancún: Calle Prol. Av. Kabáh 1, Paseos Kabah, 77517 Cancún, Q.R.
+- Mapa interactivo integrado de Google Maps con enlace directo *"Cómo llegar"*.
+- Botón flotante discreto de WhatsApp en la esquina inferior derecha.
 
 ---
 
@@ -52,29 +61,29 @@ Aplicación web moderna, elegante y 100% responsiva (mobile-first) para **"Caver
 
 ```text
 CabernicolasBarbershop/
-├── index.html          # Estructura semántica HTML5 y componentes accesibles
+├── .agents/
+│   └── skills/
+│       └── frontend-design/
+│           └── SKILL.md        # Skill oficial de Anthropic instalada
+├── index.html                  # HTML semántico, estructurado y accesible
 ├── css/
-│   └── styles.css      # Estilos CSS3 luxury: paleta negro/oro, gradientes y animaciones
+│   └── styles.css              # Sistema visual editorial luxury autocontenido
 ├── js/
-│   └── app.js          # Lógica interactiva, selector de slots, ticket y WhatsApp API
+│   └── app.js                  # Lógica reactiva, slots dinámicos, cálculo y WhatsApp
 ├── assets/
-│   └── favicon.svg     # Icono vectorial dorado para la pestaña del navegador
-└── README.md           # Documentación completa del proyecto
+│   └── favicon.svg             # Monograma vectorial en bronce y carbon
+└── README.md                   # Documentación técnica y de diseño
 ```
 
 ---
 
 ## 🚀 Cómo Ejecutar la Aplicación
 
-1. **Abrir directamente:**
-   Haz doble clic sobre el archivo `index.html` en tu navegador favorito (Chrome, Edge, Firefox, Safari).
+1. **Apertura directa:**
+   Doble clic sobre [index.html](index.html) en cualquier navegador moderno.
 2. **Servidor local (opcional):**
-   Si prefieres ejecutar un servidor local:
    ```bash
-   # Con Python
-   python -m http.server 8000
-
-   # O con Node.js / npx
    npx serve .
+   # o
+   python -m http.server 8000
    ```
-   Luego ingresa a `http://localhost:8000`.

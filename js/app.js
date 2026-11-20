@@ -1,6 +1,7 @@
 /**
- * Cavernícolas BarberShop - Core Application Logic
+ * Cabernicolas Barbershop - Core Application Logic
  * Modern, responsive booking system with WhatsApp confirmation flow
+ * Bespoke Editorial Luxury Edition
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     clientName: '',
     clientPhone: '',
     clientNotes: '',
-    appointments: JSON.parse(localStorage.getItem('cavernicolas_appointments') || '[]')
+    appointments: JSON.parse(localStorage.getItem('cabernicolas_appointments') || localStorage.getItem('cavernicolas_appointments') || '[]')
   };
 
-  // Specialties master data
+  // Specialty services master list
   const SPECIALTY_SERVICES = [
     { id: 'srv-corte-clasico', name: 'Corte Clásico de Cabello', price: 200 },
     { id: 'srv-afeitado-barba', name: 'Afeitado Tradicional de Barba', price: 150 },
@@ -105,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function checkBusinessHours() {
-    // Cancun / Quintana Roo is UTC-5 (America/Cancun)
+    // Cancun / Quintana Roo (UTC-5)
     const now = new Date();
     const day = now.getDay(); // 0 is Sunday, 1-6 is Mon-Sat
     const hour = now.getHours();
@@ -131,24 +132,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (shopLiveStatus) {
       if (isOpen) {
-        shopLiveStatus.innerHTML = `<span class="text-emerald-400 font-bold">Abierto Ahora</span> • Paseos Kabah (${scheduleText})`;
+        shopLiveStatus.innerHTML = `<span style="color: var(--status-emerald); font-weight: 700;">Abierto Ahora</span> • Paseos Kabah (${scheduleText})`;
       } else {
-        shopLiveStatus.innerHTML = `<span class="text-amber-400 font-bold">Cerrado por ahora</span> • Reanudamos a las 10:00 AM (${scheduleText})`;
+        shopLiveStatus.innerHTML = `<span style="color: #f59e0b; font-weight: 700;">Cerrado por ahora</span> • Reanudamos a las 10:00 AM (${scheduleText})`;
       }
     }
 
     if (badgeOpenStatus) {
       if (isOpen) {
         badgeOpenStatus.textContent = 'Abierto Ahora';
-        badgeOpenStatus.className = 'status-badge-live open';
+        badgeOpenStatus.style.background = 'var(--status-emerald-bg)';
+        badgeOpenStatus.style.color = 'var(--status-emerald)';
+        badgeOpenStatus.style.borderColor = 'rgba(16, 185, 129, 0.3)';
       } else {
         badgeOpenStatus.textContent = 'Cerrado Ahora';
-        badgeOpenStatus.className = 'status-badge-live closed';
+        badgeOpenStatus.style.background = 'rgba(239, 68, 68, 0.12)';
+        badgeOpenStatus.style.color = '#f87171';
+        badgeOpenStatus.style.borderColor = 'rgba(239, 68, 68, 0.3)';
       }
     }
   }
 
-  // --- Header & Navigation ---
+  // --- Header Scroll Effect ---
   function setupHeaderScroll() {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 40) {
@@ -159,13 +164,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  // --- Mobile Menu Toggle ---
   function setupMobileMenu() {
     if (mobileMenuBtn && mobileDrawer) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileDrawer.classList.toggle('open');
       });
 
-      // Close drawer on link click
       const mobileLinks = mobileDrawer.querySelectorAll('a, button');
       mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -178,15 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Date Picker Constraints ---
   function setupDateConstraints() {
     if (appointmentDateInput) {
-      // Format today as YYYY-MM-DD
       const today = new Date();
       const yyyy = today.getFullYear();
       const mm = String(today.getMonth() + 1).padStart(2, '0');
       const dd = String(today.getDate()).padStart(2, '0');
-      const minDate = `${yyyy}-${mm}-${dd}`;
-      appointmentDateInput.min = minDate;
+      appointmentDateInput.min = `${yyyy}-${mm}-${dd}`;
 
-      // Set max date to 60 days ahead
+      // Max 60 days in advance
       const maxDateObj = new Date();
       maxDateObj.setDate(maxDateObj.getDate() + 60);
       const maxYYYY = maxDateObj.getFullYear();
@@ -196,21 +199,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- Render Specialty Chips in Step 1 ---
+  // --- Render Specialty Chips in Booking Module ---
   function renderSpecialtiesChips() {
     if (!bookingSpecialtiesChips) return;
     bookingSpecialtiesChips.innerHTML = '';
 
     SPECIALTY_SERVICES.forEach(item => {
       const chip = document.createElement('div');
-      chip.className = 'chip-item specialty-chip';
+      chip.className = 'specialty-chip';
       chip.dataset.id = item.id;
       chip.innerHTML = `
-        <div class="flex items-center gap-2 truncate pr-1">
-          <input type="checkbox" id="chk-${item.id}" class="accent-gold-500 rounded cursor-pointer" style="accent-color: #D4AF37;">
-          <label for="chk-${item.id}" class="truncate cursor-pointer text-gray-300 font-medium text-xs">${item.name}</label>
+        <div style="display: flex; align-items: center; gap: 0.5rem; overflow: hidden; padding-right: 0.25rem;">
+          <input type="checkbox" id="chk-${item.id}" style="cursor: pointer;">
+          <label for="chk-${item.id}" style="cursor: pointer; font-size: 0.78rem; font-weight: 500; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${item.name}</label>
         </div>
-        <span class="text-gold-400 font-bold font-mono text-xs whitespace-nowrap">$${item.price}</span>
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--accent-bronze); white-space: nowrap;">$${item.price}</span>
       `;
 
       const checkbox = chip.querySelector('input');
@@ -227,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Catalog Interaction Handlers ---
   function bindCatalogEvents() {
-    // Categoría A: Packages
+    // Packages in Section 1
     const packageButtons = document.querySelectorAll('.btn-select-package');
     packageButtons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -236,13 +239,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const price = parseInt(btn.dataset.packagePrice, 10);
         selectPackage(id, name, price);
 
-        // Smooth scroll to booking
         document.getElementById('reservar').scrollIntoView({ behavior: 'smooth' });
-        showToast(`¡Has elegido la experiencia "${name}"!`);
+        showToast(`Experiencia "${name}" añadida a tu cita.`);
       });
     });
 
-    // Step 1: Package Pickers inside booking card
+    // Package Buttons inside Booking Tray
     const pkgPickerButtons = document.querySelectorAll('.btn-picker-pkg');
     pkgPickerButtons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -258,14 +260,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Clear package button
+    // Clear Package Button
     if (btnClearPackage) {
       btnClearPackage.addEventListener('click', () => {
         clearPackage();
       });
     }
 
-    // Categoría B: Specialty list "+ Añadir" buttons
+    // Specialty Services "+ Añadir" buttons
     const specialtyAddButtons = document.querySelectorAll('.btn-add-specialty');
     specialtyAddButtons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -277,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleSpecialty(id, name, price, !isCurrentlySelected);
 
         if (!isCurrentlySelected) {
-          showToast(`"${name}" añadido a tu cita.`);
+          showToast(`"${name}" añadido.`);
         }
       });
     });
@@ -286,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function selectPackage(id, name, price) {
     state.selectedPackage = { id, name, price };
 
-    // Update Step 1 visual buttons
+    // Update Quick Picker Buttons
     document.querySelectorAll('.btn-picker-pkg').forEach(btn => {
       if (btn.dataset.pkgId === id) {
         btn.classList.add('active');
@@ -295,21 +297,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Update Catalog category A cards
-    document.querySelectorAll('.experience-card').forEach(card => {
+    // Update Section 1 cards
+    document.querySelectorAll('.experience-item').forEach(card => {
       const cardBtn = card.querySelector('.btn-select-package');
       if (cardBtn && cardBtn.dataset.packageId === id) {
-        card.style.borderColor = '#D4AF37';
-        cardBtn.innerHTML = '<span>✓ Experiencia Seleccionada</span>';
+        cardBtn.classList.add('active-selected');
+        cardBtn.textContent = '✓ Seleccionada';
       } else if (cardBtn) {
-        card.style.borderColor = '';
-        const defaultName = cardBtn.dataset.packageName.replace('Cavernícolas ', '');
-        cardBtn.innerHTML = `<span>Elegir Experiencia ${defaultName}</span>`;
+        cardBtn.classList.remove('active-selected');
+        const defaultName = cardBtn.dataset.packageName.replace(/Cavern[íi]colas\s*/i, '').replace(/Cabern[íi]colas\s*/i, '');
+        cardBtn.textContent = `Seleccionar ${defaultName}`;
       }
     });
 
     if (selectedPkgDisplay) {
-      selectedPkgDisplay.innerHTML = `<span class="text-white font-semibold">★ ${name}</span> — <span class="text-gold-400 font-bold">$${price} MXN</span>`;
+      selectedPkgDisplay.innerHTML = `<strong style="color: var(--text-primary);">★ ${name}</strong> — <span style="color: var(--accent-bronze); font-family: var(--font-mono); font-weight: 700;">$${price} MXN</span>`;
     }
     if (btnClearPackage) {
       btnClearPackage.classList.remove('hidden');
@@ -321,12 +323,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function clearPackage() {
     state.selectedPackage = null;
     document.querySelectorAll('.btn-picker-pkg').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.experience-card').forEach(card => {
-      card.style.borderColor = '';
+    document.querySelectorAll('.experience-item').forEach(card => {
       const cardBtn = card.querySelector('.btn-select-package');
       if (cardBtn) {
-        const defaultName = cardBtn.dataset.packageName.replace('Cavernícolas ', '');
-        cardBtn.innerHTML = `<span>Elegir Experiencia ${defaultName}</span>`;
+        cardBtn.classList.remove('active-selected');
+        const defaultName = cardBtn.dataset.packageName.replace(/Cavern[íi]colas\s*/i, '').replace(/Cabern[íi]colas\s*/i, '');
+        cardBtn.textContent = `Seleccionar ${defaultName}`;
       }
     });
 
@@ -347,19 +349,19 @@ document.addEventListener('DOMContentLoaded', () => {
       state.selectedSpecialties.delete(id);
     }
 
-    // Sync Categoría B "+ Añadir" button in section
+    // Sync button in Section 2
     const catBBtn = document.querySelector(`.btn-add-specialty[data-id="${id}"]`);
     if (catBBtn) {
       if (forceSelect) {
         catBBtn.classList.add('selected');
-        catBBtn.innerHTML = '<span class="btn-text">✓ Agregado</span>';
+        catBBtn.textContent = '✓ Agregado';
       } else {
         catBBtn.classList.remove('selected');
-        catBBtn.innerHTML = '<span class="btn-text">+ Añadir</span>';
+        catBBtn.textContent = '+ Añadir';
       }
     }
 
-    // Sync Chip checkbox inside booking card
+    // Sync Chip in Booking Module
     const chip = document.querySelector(`.specialty-chip[data-id="${id}"]`);
     if (chip) {
       const checkbox = chip.querySelector('input');
@@ -385,14 +387,14 @@ document.addEventListener('DOMContentLoaded', () => {
       count++;
       total += state.selectedPackage.price;
       itemsHtml += `
-        <div class="flex items-center justify-between py-2 border-b border-white/5 bg-gold-500/10 px-2.5 rounded mb-1">
-          <div class="flex items-center gap-1.5 truncate pr-2">
-            <span class="text-gold-400 font-bold">★</span>
-            <span class="font-bold text-white text-xs truncate">${state.selectedPackage.name}</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xs); margin-bottom: 0.45rem;">
+          <div style="display: flex; align-items: center; gap: 0.4rem; overflow: hidden; padding-right: 0.5rem;">
+            <span style="color: var(--accent-bronze); font-size: 0.75rem;">★</span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${state.selectedPackage.name}</span>
           </div>
-          <div class="flex items-center gap-2 flex-shrink-0">
-            <span class="font-mono text-gold-300 font-bold text-xs">$${state.selectedPackage.price} MXN</span>
-            <button type="button" class="btn-remove-summary text-gray-500 hover:text-red-400 text-xs px-1 cursor-pointer" data-action="remove-package" title="Quitar">✕</button>
+          <div style="display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0;">
+            <span style="font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700; color: var(--accent-bronze);">$${state.selectedPackage.price} MXN</span>
+            <button type="button" class="btn-remove-summary" data-action="remove-package" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.75rem; padding: 0 0.2rem;" title="Quitar">✕</button>
           </div>
         </div>
       `;
@@ -403,14 +405,14 @@ document.addEventListener('DOMContentLoaded', () => {
       count++;
       total += item.price;
       itemsHtml += `
-        <div class="flex items-center justify-between py-1.5 border-b border-white/5 px-2">
-          <div class="flex items-center gap-1.5 truncate pr-2">
-            <span class="text-gray-400 text-xs">✂</span>
-            <span class="text-gray-300 text-xs truncate">${item.name}</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border-subtle);">
+          <div style="display: flex; align-items: center; gap: 0.4rem; overflow: hidden; padding-right: 0.5rem;">
+            <span style="color: var(--text-muted); font-size: 0.72rem;">—</span>
+            <span style="font-size: 0.78rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${item.name}</span>
           </div>
-          <div class="flex items-center gap-2 flex-shrink-0">
-            <span class="font-mono text-gray-300 text-xs">$${item.price} MXN</span>
-            <button type="button" class="btn-remove-summary text-gray-500 hover:text-red-400 text-xs px-1 cursor-pointer" data-action="remove-specialty" data-id="${item.id}" title="Quitar">✕</button>
+          <div style="display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0;">
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-primary);">$${item.price} MXN</span>
+            <button type="button" class="btn-remove-summary" data-action="remove-specialty" data-id="${item.id}" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.75rem; padding: 0 0.2rem;" title="Quitar">✕</button>
           </div>
         </div>
       `;
@@ -418,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (count === 0) {
       itemsHtml = `
-        <div class="py-8 text-center text-gray-500 italic text-xs">
+        <div style="padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.82rem; font-style: italic;">
           Aún no has agregado ningún servicio o experiencia.
         </div>
       `;
@@ -427,7 +429,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (summaryItemsList) {
       summaryItemsList.innerHTML = itemsHtml;
 
-      // Bind remove buttons inside summary
       summaryItemsList.querySelectorAll('.btn-remove-summary').forEach(btn => {
         btn.addEventListener('click', () => {
           const action = btn.dataset.action;
@@ -445,9 +446,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (summaryTotalPrice) summaryTotalPrice.textContent = `$${total}`;
   }
 
-  // --- Dynamic Time Slots Generation ---
+  // --- Form & Dynamic Slot Generation ---
   function bindFormEvents() {
-    // Date selection change
     if (appointmentDateInput) {
       appointmentDateInput.addEventListener('change', (e) => {
         const val = e.target.value;
@@ -459,7 +459,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Client form inputs
     if (clientNameInput) {
       clientNameInput.addEventListener('input', (e) => {
         state.clientName = e.target.value.trim();
@@ -480,7 +479,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Form submit
     if (bookingForm) {
       bookingForm.addEventListener('submit', handleBookingSubmit);
     }
@@ -506,25 +504,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (selectedTimeInput) selectedTimeInput.value = '';
     if (previewTime) previewTime.textContent = 'Por definir';
 
-    // Parse date safely
     const [year, month, dayNum] = dateStr.split('-').map(Number);
     const dateObj = new Date(year, month - 1, dayNum);
-    const dayOfWeek = dateObj.getDay(); // 0 = Sunday, 1..6 = Mon..Sat
+    const dayOfWeek = dateObj.getDay(); // 0 is Sunday, 1..6 is Mon..Sat
 
-    // Schedule rules:
-    // Lunes a Sábado: 10:00 a.m. a 8:00 p.m. (bloques cada 30 min)
-    // Domingo: 10:00 a.m. a 6:00 p.m.
+    // Schedule:
+    // Mon-Sat: 10:00 a.m. - 8:00 p.m.
+    // Sunday: 10:00 a.m. - 6:00 p.m.
     const isSunday = (dayOfWeek === 0);
-    const endHour = isSunday ? 18 : 20; // 6 PM or 8 PM
+    const endHour = isSunday ? 18 : 20;
 
     if (slotsRangeBadge) {
-      slotsRangeBadge.textContent = isSunday ? 'Domingo: 10:00 AM - 6:00 PM' : 'Lunes-Sábado: 10:00 AM - 8:00 PM';
+      slotsRangeBadge.textContent = isSunday ? 'Domingo: 10:00 AM – 6:00 PM' : 'Lunes–Sábado: 10:00 AM – 8:00 PM';
     }
 
     if (dayScheduleHint) {
       dayScheduleHint.innerHTML = isSunday
-        ? `<span class="text-gold-400 font-bold">⚡ Horario Dominical:</span> Bloques de atención de 10:00 a.m. a 6:00 p.m.`
-        : `<span class="text-gold-400 font-bold">⚡ Horario Regular:</span> Bloques de atención de 10:00 a.m. a 8:00 p.m.`;
+        ? `<strong style="color: var(--accent-bronze);">Horario Dominical:</strong> Bloques disponibles de 10:00 a.m. a 6:00 p.m.`
+        : `<strong style="color: var(--accent-bronze);">Horario Regular:</strong> Bloques disponibles de 10:00 a.m. a 8:00 p.m.`;
     }
 
     const now = new Date();
@@ -539,13 +536,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const minuteOptions = (hour === endHour) ? [0] : [0, 30];
       for (const minute of minuteOptions) {
         const timeStr24 = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
-        
-        // Format 12-hour AM/PM
         const period = hour >= 12 ? 'PM' : 'AM';
         const displayHour = hour % 12 === 0 ? 12 : hour % 12;
         const displayTime = `${displayHour}:${String(minute).padStart(2, '0')} ${period}`;
 
-        // Check if disabled because time has passed today (with 15 min buffer)
         let isDisabled = false;
         if (isToday) {
           const slotDateTime = new Date(year, month - 1, dayNum, hour, minute);
@@ -560,7 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (slots.length === 0) {
       slotsContainer.innerHTML = `
-        <div class="col-span-full py-6 text-center text-gray-500 text-xs">
+        <div style="grid-column: 1/-1; padding: 2rem 0; text-align: center; color: var(--text-muted); font-size: 0.8rem;">
           No hay horarios disponibles para la fecha seleccionada.
         </div>
       `;
@@ -570,7 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slots.forEach(slot => {
       const pill = document.createElement('button');
       pill.type = 'button';
-      pill.className = `time-slot-btn slot-pill ${slot.disabled ? 'disabled' : ''}`;
+      pill.className = `time-slot-btn ${slot.disabled ? 'disabled' : ''}`;
       pill.textContent = slot.display;
       pill.dataset.time = slot.display;
 
@@ -589,21 +583,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Form Validation & Booking Submission ---
+  // --- Validation & Submission ---
   function handleBookingSubmit(e) {
     e.preventDefault();
 
     let hasErrors = false;
 
-    // 1. Validate service selection (must have package OR at least 1 specialty)
+    // 1. Service selected
     const totalServices = (state.selectedPackage ? 1 : 0) + state.selectedSpecialties.size;
     if (totalServices === 0) {
-      showToast('Por favor selecciona al menos una experiencia o servicio.', 'error');
+      showToast('Selecciona al menos una experiencia o servicio.', 'error');
       document.getElementById('experiencias').scrollIntoView({ behavior: 'smooth' });
       return;
     }
 
-    // 2. Validate client name
+    // 2. Client Name
     const nameVal = clientNameInput.value.trim();
     if (!nameVal || nameVal.length < 3) {
       document.getElementById('err-client-name').classList.remove('hidden');
@@ -613,7 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('err-client-name').classList.add('hidden');
     }
 
-    // 3. Validate client phone (at least 10 digits)
+    // 3. Client Phone
     const phoneVal = clientPhoneInput.value.replace(/\D/g, '');
     if (!phoneVal || phoneVal.length < 10) {
       document.getElementById('err-client-phone').classList.remove('hidden');
@@ -623,7 +617,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('err-client-phone').classList.add('hidden');
     }
 
-    // 4. Validate appointment date
+    // 4. Date
     const dateVal = appointmentDateInput.value;
     if (!dateVal) {
       document.getElementById('err-appointment-date').classList.remove('hidden');
@@ -633,7 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('err-appointment-date').classList.add('hidden');
     }
 
-    // 5. Validate time slot
+    // 5. Time Slot
     if (!state.selectedTime) {
       document.getElementById('err-time-slot').classList.remove('hidden');
       hasErrors = true;
@@ -646,7 +640,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // All validations passed! Generate reservation
+    // Create reservation
     createAppointment({
       name: nameVal,
       phone: phoneVal,
@@ -657,11 +651,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function createAppointment(details) {
-    // Generate unique Folio: CAV-XXXXX
     const randomCode = Math.floor(10000 + Math.random() * 90000);
     const folio = `CAV-${randomCode}`;
 
-    // Collect list of items & total
     const items = [];
     let grandTotal = 0;
 
@@ -696,23 +688,20 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'Confirmada en App'
     };
 
-    // Save to localStorage
     state.appointments.unshift(appointment);
-    localStorage.setItem('cavernicolas_appointments', JSON.stringify(state.appointments));
+    localStorage.setItem('cabernicolas_appointments', JSON.stringify(state.appointments));
     updateMyAppointmentsBadge();
 
-    // Show Digital Ticket Modal
     renderDigitalTicket(appointment);
     showToast(`¡Cita registrada con éxito! Folio: ${folio}`);
   }
 
-  // --- Render Digital Ticket & WhatsApp Message ---
+  // --- Render Digital Ticket & WhatsApp Link ---
   function renderDigitalTicket(appointment) {
     document.getElementById('ticket-folio').textContent = `#${appointment.folio}`;
     document.getElementById('ticket-client-name').textContent = appointment.clientName;
     document.getElementById('ticket-client-phone').textContent = formatPhone(appointment.clientPhone);
 
-    // Format Date
     const parts = appointment.date.split('-');
     const dateObj = new Date(parts[0], parts[1] - 1, parts[2]);
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -720,22 +709,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('ticket-date').textContent = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
     document.getElementById('ticket-time').textContent = appointment.time;
 
-    // Services breakdown
     const ticketServicesList = document.getElementById('ticket-services-list');
     ticketServicesList.innerHTML = '';
     appointment.items.forEach(item => {
       const row = document.createElement('div');
-      row.className = 'flex justify-between items-center py-1';
+      row.style.display = 'flex';
+      row.style.justifyContent = 'space-between';
+      row.style.alignItems = 'center';
       row.innerHTML = `
-        <span class="text-gray-300 ${item.type === 'package' ? 'font-bold text-gold-300' : ''}">${item.name}</span>
-        <span class="font-mono text-white font-medium">$${item.price} MXN</span>
+        <span style="color: ${item.type === 'package' ? 'var(--text-primary)' : 'var(--text-secondary)'}; font-weight: ${item.type === 'package' ? '700' : '400'};">${item.name}</span>
+        <span style="font-family: var(--font-mono); color: var(--text-primary); font-weight: 600;">$${item.price} MXN</span>
       `;
       ticketServicesList.appendChild(row);
     });
 
     document.getElementById('ticket-total').textContent = `$${appointment.total}`;
 
-    // Notes
     const notesContainer = document.getElementById('ticket-notes-container');
     const notesText = document.getElementById('ticket-notes-text');
     if (appointment.notes) {
@@ -745,31 +734,26 @@ document.addEventListener('DOMContentLoaded', () => {
       notesContainer.classList.add('hidden');
     }
 
-    // Build WhatsApp Message Link
     const waUrl = buildWhatsAppReservationUrl(appointment);
     if (btnTicketWhatsapp) {
       btnTicketWhatsapp.href = waUrl;
     }
 
-    // Open ticket modal
     modalTicket.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   }
 
   function buildWhatsAppReservationUrl(appointment) {
     const phoneNumber = '529983374945';
-    
-    // Services bullet list for message
     let servicesText = '';
     appointment.items.forEach(item => {
       servicesText += `  • ${item.name} ($${item.price} MXN)\n`;
     });
 
-    // Notes line
     const notesLine = appointment.notes ? `\n📝 *Notas:* ${appointment.notes}\n` : '';
 
     const message = 
-`💈 *RESERVA CAVERNÍCOLAS BARBERSHOP* 💈
+`💈 *RESERVA CABERNICOLAS BARBERSHOP* 💈
 ━━━━━━━━━━━━━━━━━━━━
 • *Folio:* #${appointment.folio}
 • *Cliente:* ${appointment.clientName}
@@ -782,53 +766,34 @@ ${servicesText}
 💰 *Total a Liquidar:* $${appointment.total} MXN${notesLine}
 📍 *Sucursal:* Calle Prol. Av. Kabáh 1, Paseos Kabah, Cancún, Q.R.
 ━━━━━━━━━━━━━━━━━━━━
-_Hola, acabo de registrar mi cita en la aplicación web y deseo confirmar disponibilidad._`;
+_Hola, acabo de registrar mi cita en la plataforma web y deseo confirmar disponibilidad._`;
 
     return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   }
 
   // --- Modal Events ---
   function bindModalEvents() {
-    // Ticket Modal close
-    if (btnCloseTicket) {
-      btnCloseTicket.addEventListener('click', closeTicketModal);
-    }
-    if (btnCloseTicketX) {
-      btnCloseTicketX.addEventListener('click', closeTicketModal);
-    }
-    if (btnPrintTicket) {
-      btnPrintTicket.addEventListener('click', () => {
-        window.print();
-      });
-    }
+    if (btnCloseTicket) btnCloseTicket.addEventListener('click', closeTicketModal);
+    if (btnCloseTicketX) btnCloseTicketX.addEventListener('click', closeTicketModal);
+    if (btnPrintTicket) btnPrintTicket.addEventListener('click', () => window.print());
 
-    // Close when clicking backdrop
     if (modalTicket) {
       modalTicket.addEventListener('click', (e) => {
         if (e.target === modalTicket) closeTicketModal();
       });
     }
 
-    // Mis Citas Modal open/close
-    if (btnOpenMyAppointments) {
-      btnOpenMyAppointments.addEventListener('click', openMyAppointmentsModal);
-    }
-    if (btnOpenMyAppointmentsMobile) {
-      btnOpenMyAppointmentsMobile.addEventListener('click', openMyAppointmentsModal);
-    }
-    if (btnCloseMyAppointments) {
-      btnCloseMyAppointments.addEventListener('click', closeMyAppointmentsModal);
-    }
-    if (btnCloseMyAppointmentsX) {
-      btnCloseMyAppointmentsX.addEventListener('click', closeMyAppointmentsModal);
-    }
+    if (btnOpenMyAppointments) btnOpenMyAppointments.addEventListener('click', openMyAppointmentsModal);
+    if (btnOpenMyAppointmentsMobile) btnOpenMyAppointmentsMobile.addEventListener('click', openMyAppointmentsModal);
+    if (btnCloseMyAppointments) btnCloseMyAppointments.addEventListener('click', closeMyAppointmentsModal);
+    if (btnCloseMyAppointmentsX) btnCloseMyAppointmentsX.addEventListener('click', closeMyAppointmentsModal);
+
     if (modalMyAppointments) {
       modalMyAppointments.addEventListener('click', (e) => {
         if (e.target === modalMyAppointments) closeMyAppointmentsModal();
       });
     }
 
-    // ESC key closes modals
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeTicketModal();
@@ -865,10 +830,10 @@ _Hola, acabo de registrar mi cita en la aplicación web y deseo confirmar dispon
 
     if (state.appointments.length === 0) {
       myAppointmentsList.innerHTML = `
-        <div class="py-12 text-center text-gray-500">
-          <span class="text-3xl block mb-2">📅</span>
-          <p class="text-sm">No tienes citas registradas en este navegador.</p>
-          <a href="#reservar" class="text-gold-400 hover:underline text-xs mt-2 inline-block" onclick="document.getElementById('modal-my-appointments').classList.add('hidden'); document.body.style.overflow = '';">
+        <div style="padding: 3rem 0; text-align: center; color: var(--text-muted);">
+          <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📅</span>
+          <p style="font-size: 0.88rem;">No tienes citas registradas en este navegador.</p>
+          <a href="#reservar" style="color: var(--accent-bronze); font-size: 0.78rem; text-decoration: underline; margin-top: 0.5rem; display: inline-block;" onclick="document.getElementById('modal-my-appointments').classList.add('hidden'); document.body.style.overflow = '';">
             Agendar una cita ahora →
           </a>
         </div>
@@ -878,27 +843,33 @@ _Hola, acabo de registrar mi cita en la aplicación web y deseo confirmar dispon
 
     state.appointments.forEach((apt, index) => {
       const card = document.createElement('div');
-      card.className = 'bg-carbon-800 p-4 rounded-xl border border-white/5 space-y-3';
-      
+      card.style.background = 'var(--bg-deep)';
+      card.style.padding = '1.25rem';
+      card.style.borderRadius = 'var(--radius-xs)';
+      card.style.border = '1px solid var(--border-subtle)';
+      card.style.display = 'flex';
+      card.style.flexDirection = 'column';
+      card.style.gap = '0.75rem';
+
       const servicesNames = apt.items.map(i => i.name).join(', ');
       const waUrl = buildWhatsAppReservationUrl(apt);
 
       card.innerHTML = `
-        <div class="flex items-center justify-between pb-2 border-b border-white/5">
-          <span class="font-mono text-gold-400 font-bold text-sm">#${apt.folio}</span>
-          <span class="status-badge-live open text-[10px]">Cita Guardada</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-subtle);">
+          <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--accent-bronze);">#${apt.folio}</span>
+          <span style="font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); background: var(--status-emerald-bg); color: var(--status-emerald);">Cita Guardada</span>
         </div>
-        <div class="text-xs space-y-1">
-          <p><strong class="text-gray-400">Cliente:</strong> <span class="text-white">${apt.clientName}</span></p>
-          <p><strong class="text-gray-400">Fecha y Hora:</strong> <span class="text-gold-300 font-semibold">${apt.date} a las ${apt.time}</span></p>
-          <p><strong class="text-gray-400">Servicios:</strong> <span class="text-gray-300">${servicesNames}</span></p>
-          <p><strong class="text-gray-400">Total:</strong> <span class="text-gold-400 font-mono font-bold">$${apt.total} MXN</span></p>
+        <div style="font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.25rem;">
+          <p><strong style="color: var(--text-muted);">Cliente:</strong> <span style="color: var(--text-primary); font-weight: 500;">${apt.clientName}</span></p>
+          <p><strong style="color: var(--text-muted);">Fecha y Hora:</strong> <span style="color: var(--text-primary); font-weight: 600;">${apt.date} a las ${apt.time}</span></p>
+          <p><strong style="color: var(--text-muted);">Servicios:</strong> <span style="color: var(--text-secondary);">${servicesNames}</span></p>
+          <p><strong style="color: var(--text-muted);">Total:</strong> <span style="font-family: var(--font-mono); font-weight: 700; color: var(--accent-bronze);">$${apt.total} MXN</span></p>
         </div>
-        <div class="flex items-center gap-2 pt-2 border-t border-white/5">
-          <a href="${waUrl}" target="_blank" rel="noopener" class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1.5 rounded-lg hover:bg-emerald-500/30 transition-colors flex-1 text-center font-medium">
-            💬 Reenviar WhatsApp
+        <div style="display: flex; gap: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--border-subtle);">
+          <a href="${waUrl}" target="_blank" rel="noopener" style="flex: 1; text-align: center; font-size: 0.75rem; font-weight: 700; background: rgba(37, 211, 102, 0.15); color: #25D366; border: 1px solid rgba(37, 211, 102, 0.3); padding: 0.5rem; border-radius: var(--radius-xs);">
+            Reenviar WhatsApp
           </a>
-          <button type="button" class="btn-cancel-apt text-xs text-red-400 hover:text-red-300 border border-red-500/20 hover:border-red-500/40 px-3 py-1.5 rounded-lg transition-colors cursor-pointer" data-index="${index}">
+          <button type="button" class="btn-cancel-apt" data-index="${index}" style="font-size: 0.75rem; color: #f87171; background: transparent; border: 1px solid rgba(239, 68, 68, 0.2); padding: 0.5rem 0.75rem; border-radius: var(--radius-xs); cursor: pointer;">
             Cancelar Cita
           </button>
         </div>
@@ -907,13 +878,12 @@ _Hola, acabo de registrar mi cita en la aplicación web y deseo confirmar dispon
       myAppointmentsList.appendChild(card);
     });
 
-    // Bind cancellation buttons
     myAppointmentsList.querySelectorAll('.btn-cancel-apt').forEach(btn => {
       btn.addEventListener('click', () => {
         const idx = parseInt(btn.dataset.index, 10);
         if (confirm('¿Estás seguro de que deseas cancelar esta cita guardada?')) {
           state.appointments.splice(idx, 1);
-          localStorage.setItem('cavernicolas_appointments', JSON.stringify(state.appointments));
+          localStorage.setItem('cabernicolas_appointments', JSON.stringify(state.appointments));
           renderMyAppointmentsList();
           updateMyAppointmentsBadge();
           showToast('Cita cancelada con éxito.');
@@ -941,7 +911,7 @@ _Hola, acabo de registrar mi cita en la aplicación web y deseo confirmar dispon
     const toastIcon = document.getElementById('toast-icon');
     if (toastIcon) {
       toastIcon.textContent = type === 'error' ? '⚠️' : '✓';
-      toastIcon.className = type === 'error' ? 'text-red-400 text-lg' : 'text-gold-400 text-lg';
+      toastIcon.style.color = type === 'error' ? '#f87171' : 'var(--accent-bronze)';
     }
 
     toast.classList.remove('hidden');
